@@ -1,0 +1,45 @@
+@use '../var';
+
+.photoBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  margin-bottom: 10px;
+}
+.photoBox__img-box {
+  width:163px;
+	height:163px;
+	overflow:hidden;
+	position:relative;
+	border:1px solid #fff;
+	border-radius:50%;
+	margin:0 auto;
+}
+.photoBox__img{
+	height:100%;
+	position:absolute;
+  top: 0;
+  right: 0;
+}
+.photoBox__main {
+  font-family: var.$font-main;
+  font-size: var.$size-h1;
+  font-weight: var.$weight-bold;
+  line-height: 54px;
+}
+.photoBox__title {
+  font-family: var.$font-main;
+  font-size: var.$size-h2;
+  font-weight: var.$weight-semi-bold;
+  line-height: 30px;
+  flex-shrink: 3;
+}
+.photoBox__text {
+  font-family: var.$font-main;
+  font-size: var.$size-text;
+  font-weight: var.$weight-regular;
+  line-height: 21px;
+  max-width: 500px;
+  flex-shrink: 3;
+}

@@ -1,0 +1,22 @@
+@use '../var';
+
+.button{
+  width: 127px;
+  height: 40px;
+  background: #222935;
+  border-radius: 5px;
+  color: var.$color-text-light;
+}
+.button__text {
+  font-family: var.$font-main;
+  font-size: var.$size-title;
+  font-weight: var.$weight-regular;
+  line-height: 19.2px;
+}
+.button__icon {
+  margin: 5px;
+}
+
+button:hover:active:focus {
+  border: 1px solid white;
+}
