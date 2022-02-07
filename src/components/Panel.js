@@ -12,7 +12,7 @@ export default function Panel() {
   const handleClick = () => setClick(!click);
 
   return (
-    <section className='panel'>
+    <section className={click ? 'panel' : 'panel panel_non-active'}>
       <div className={click ? 'panel__nav' : 'panel__nav panel__nav_non-active'}>
         <button className='panel__icon' onClick={handleClick}>
           <FontAwesomeIcon icon="bars" />

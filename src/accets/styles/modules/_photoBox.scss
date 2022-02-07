@@ -46,7 +46,7 @@
 .photoBox__img-box_menu {
   width:100px;
 	height:100px;
-  animation: sizeBig 0.3s;
+  //animation: sizeBig 0.3s;
 }
 .photoBox__main_menu {
   font-size: var.$size-title;
@@ -56,7 +56,7 @@
 .photoBox__img-box_bar {
   width:40px;
 	height:40px;
-  animation: sizeSmall 0.7s;
+  //animation: sizeSmall 0.7s;
 }
 @keyframes sizeSmall {
   from {
