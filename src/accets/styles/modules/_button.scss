@@ -1,22 +1,31 @@
 @use '../var';
 
-.button{
-  width: 127px;
-  height: 40px;
+.button-main{
+  padding: 10.5px 20px;
   background: #222935;
+  border: 0px solid #222935;
   border-radius: 5px;
   color: var.$color-text-light;
+  transition: all 0.3s linear;
 }
-.button__text {
+.button-main__text {
   font-family: var.$font-main;
   font-size: var.$size-title;
   font-weight: var.$weight-regular;
-  line-height: 19.2px;
+  line-height: 120%;
 }
-.button__icon {
+.button-main__icon {
   margin: 5px;
 }
+.button-main:hover {
+  background-color: var.$color-text-green;
+}
 
-button:hover:active:focus {
-  border: 1px solid white;
+@media screen and (max-width: 600px) {
+  .button-main__text {
+    display: none;
+  }
+  .button-main {
+    padding: 10px;
+  }
 }

@@ -43,3 +43,40 @@
   max-width: 500px;
   flex-shrink: 3;
 }
+.photoBox__img-box_menu {
+  width:100px;
+	height:100px;
+  animation: sizeBig 0.3s;
+}
+.photoBox__main_menu {
+  font-size: var.$size-title;
+  line-height: 120%;
+  color: var.$color-text-light;
+}
+.photoBox__img-box_bar {
+  width:40px;
+	height:40px;
+  animation: sizeSmall 0.7s;
+}
+@keyframes sizeSmall {
+  from {
+    width:100px;
+    height:100px;
+  }
+
+  to {
+    width:40px;
+    height:40px;
+  }
+}
+@keyframes sizeBig {
+  from {
+    width:40px;
+    height:40px;
+  }
+
+  to {
+    width:100px;
+    height:100px;
+  }
+}

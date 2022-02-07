@@ -1,0 +1,41 @@
+@use '../var';
+
+.panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 250px;
+  min-height: 100vh;
+  transition: all 0.5s ease;
+}
+.panel__nav {
+  padding-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var.$color-text-durk;
+  width: 250px;
+  min-height: 100vh;
+  left: 0;
+  transition: all 1s ease;
+}
+.panel__nav_non-active {
+  left: -100%;
+  transition: all 1s ease;
+}
+.panel__icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: var.$color-text-durk;
+  color: var.$color-text-light;
+  right: -30px;
+  top: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .panel {
+    width: 54px;
+  }
+}

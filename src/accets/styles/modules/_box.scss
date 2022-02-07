@@ -1,0 +1,18 @@
+@use '../var';
+
+.box {
+  font-family: var.$font-main;
+}
+.box__title {
+  padding: 40px 0;
+  font-size: var.$size-h2;
+  font-weight: var.$weight-bold;
+  line-height: 120%;
+  color: var.$color-text-green;
+}
+.box__content {
+  font-size: var.$size-text;
+  font-weight: var.$weight-regular;
+  line-height: 150%;
+  color: var.$color-text-green;
+}

@@ -1,10 +1,10 @@
 import './App.scss';
 import Home from './pages/Home';
 import Inner from './pages/Inner';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faChevronLeft, faUser, faGraduationCap, faPen } from "@fortawesome/free-solid-svg-icons";
-library.add(faChevronLeft, faUser, faGraduationCap, faPen);
+import { faChevronLeft, faBars } from "@fortawesome/free-solid-svg-icons";
+library.add(faChevronLeft, faBars);
 
 function App() {
   return (
