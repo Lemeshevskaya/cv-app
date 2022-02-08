@@ -5,7 +5,7 @@ export default function PhotoBox({name, title, description, avatar}) {
   const [viewPhotoBox, setViewPhotoBox] = useState(false);
 
   const showPhoto = () => {
-    if (window.innerWidth < 600) {
+    if (window.innerWidth <= 600) {
       setViewPhotoBox(true)
     } else {
       setViewPhotoBox(false);
