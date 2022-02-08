@@ -1,9 +1,21 @@
 .inner {
-  display: grid;
-  grid-auto-flow: column;
-  // transition: all 1s linear;
 }
 .inner__main {
- padding-left: 30px;
- padding-right: 36px;
+  padding-left: 30px;
+  padding-right: 36px;
+  transition: all 0.5s ease;
+}
+.inner__main_non-active {
+  width: calc(100% - 16rem);
+  margin-left: 16rem;
+}
+.inner__main_active {
+  width: 100%;
+  margin: 0;
+}
+@media screen and (max-width: 600px) {
+  .inner__main_non-active {
+    width: calc(100% - 3.4rem);
+    margin-left: 3.4rem;
+  }
 }

@@ -13,6 +13,7 @@
   font-size: var.$size-title;
   font-weight: var.$weight-regular;
   line-height: 120%;
+  transition: all 1s ease;
 }
 .button-main__icon {
   margin: 5px;
