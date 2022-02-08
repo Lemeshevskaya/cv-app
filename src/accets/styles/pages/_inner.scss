@@ -1,5 +1,9 @@
 .inner {
   display: grid;
   grid-auto-flow: column;
-  transition: all 1s linear;
+  // transition: all 1s linear;
+}
+.inner__main {
+ padding-left: 30px;
+ padding-right: 36px;
 }

@@ -1,27 +1,24 @@
 @use '../var';
 
-.panel {
-  position: relative;
-  width: 250px;
-  min-height: 100vh;
-  transition: all 0.3s ease;
-}
+// .panel {
+//   position: relative;
+//   width: 250px;
+//   min-height: 100vh;
+// }
 .panel__nav {
   padding-top: 20px;
   position: relative;
   display: flex;
   flex-direction: column;
   background-color: var.$color-text-durk;
-  width: 100%;
+  width: 250px;
   min-height: 100vh;
   left: 0;
-  transition: all 0.3s ease;
+  transition: all 0.2s linear;
 }
 .panel__nav_non-active {
-  left: -100%;
-  transition: all 0.3s ease;
-}
-.panel_non-active {
+  left: -250px;
+  transition: all 0.2s linear;
   position: absolute;
 }
 .panel__icon {
@@ -37,7 +34,12 @@
 }
 
 @media screen and (max-width: 600px) {
-  .panel {
+  .panel__nav {
     width: 54px;
+  }
+  .panel__nav_non-active {
+    left: -54px;
+    transition: all 0.2s linear;
+    position: absolute;
   }
 }

@@ -26,57 +26,39 @@
   font-family: var.$font-main;
   font-size: var.$size-h1;
   font-weight: var.$weight-bold;
-  line-height: 54px;
+  line-height: 120%;
 }
 .photoBox__title {
   font-family: var.$font-main;
   font-size: var.$size-h2;
   font-weight: var.$weight-semi-bold;
-  line-height: 30px;
+  line-height: 120%;
   flex-shrink: 3;
 }
 .photoBox__text {
   font-family: var.$font-main;
   font-size: var.$size-text;
   font-weight: var.$weight-regular;
-  line-height: 21px;
+  line-height: 150%;
   max-width: 500px;
   flex-shrink: 3;
 }
 .photoBox__img-box_menu {
   width:100px;
 	height:100px;
-  //animation: sizeBig 0.3s;
+  transition: all 1s ease;
 }
 .photoBox__main_menu {
   font-size: var.$size-title;
   line-height: 120%;
   color: var.$color-text-light;
+  transition: all 1s ease;
+}
+.photoBox__main_box  {
+  opacity: 0;
+  font-size: 0;
 }
 .photoBox__img-box_bar {
   width:40px;
 	height:40px;
-  //animation: sizeSmall 0.7s;
-}
-@keyframes sizeSmall {
-  from {
-    width:100px;
-    height:100px;
-  }
-
-  to {
-    width:40px;
-    height:40px;
-  }
-}
-@keyframes sizeBig {
-  from {
-    width:40px;
-    height:40px;
-  }
-
-  to {
-    width:100px;
-    height:100px;
-  }
 }

@@ -1,15 +1,17 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import '../accets/styles/modules/_box.scss'
 
-export default function Box({title, content}) {
+export default function Box(props) {
   return (
     <div className='box'>
       <h2 className='box__title'>
-        {title}
+        {props.title}
       </h2>
       <p className='box__text'>
-        {content}
+        {props.content}
       </p>
+      {props.children}
     </div>
   );
 }

@@ -6,7 +6,7 @@ export default function PhotoBox({name, title, description, avatar}) {
 
   const showPhoto = () => {
     if (window.innerWidth < 600) {
-      setViewPhotoBox('bar');
+      setViewPhotoBox(true)
     } else {
       setViewPhotoBox(false);
     }
@@ -17,22 +17,15 @@ export default function PhotoBox({name, title, description, avatar}) {
   }, []);
 
   window.addEventListener('resize', showPhoto);
-
-  console.log(viewPhotoBox);
+console.log(viewPhotoBox);
   const photoBox = () => {
-    if (viewPhotoBox === 'bar' && !description) {
-      return (
-        <div className = 'photoBox__img-box photoBox__img-box_bar'>
-          <img className='photoBox__img' src={avatar} alt="photo_user" />
-        </div>
-      )
-    } else if (!description) {
+    if (!description) {
       return (
         <>
-          <div className = 'photoBox__img-box photoBox__img-box_menu'>
+          <div className = {viewPhotoBox ? 'photoBox__img-box photoBox__img-box_bar': 'photoBox__img-box photoBox__img-box_menu'}>
             <img className='photoBox__img' src={avatar} alt="photo_user" />
           </div>
-          <h1 className='photoBox__main photoBox__main_menu'>{name}</h1>
+          <h1 className={viewPhotoBox ? 'photoBox__main_box': 'photoBox__main photoBox__main_menu'}>{name}</h1>
         </>
       )
     } else {
