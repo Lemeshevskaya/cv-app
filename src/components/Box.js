@@ -1,5 +1,4 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
 import '../accets/styles/modules/_box.scss'
 
 export default function Box(props) {

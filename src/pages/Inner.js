@@ -4,6 +4,7 @@ import Panel from '../components/Panel';
 import Box from '../components/Box';
 import TimeLine from '../components/TimeLine';
 import Expertise from '../components/Expertise';
+import Portfolio from '../components/Portfolio';
 import { useSelector } from 'react-redux';
 
 export default function Inner() {
@@ -41,7 +42,11 @@ export default function Inner() {
           <Expertise data={[ { date: '2013-2014', info: { company: 'Google', job: 'Front-end developer / php programmer', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringil' } }, { date: '2012', info: { company: 'Twitter', job: 'Web developer', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor' } } ]} />
         </Box>
       </section>
-      
+      <section id = 'portfolio'>
+        <Box title='Portfolio'>
+          <Portfolio/>
+        </Box>
+      </section>
     </main>
   </div>;
 }

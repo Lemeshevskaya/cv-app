@@ -23,7 +23,7 @@ export default function Navigation() {
     <nav className="navigation">
     <ul className="navigation__list">
           <li className="navigation__item">
-            <a href='#about-me' className={!collapse ? 'navigation__link': 'navigation__link navigation__link_non-active'} to="/about-me">
+            <a href='#about-me' className={!collapse ? 'navigation__link': 'navigation__link navigation__link_non-active'}>
               <svg className="navigation__icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M1.16667 14C1.16667 14 0 14 0 12.8333C0 11.6667 1.16667 8.16667 7 8.16667C12.8333 8.16667 14 11.6667 14 12.8333C14 14 12.8333 14 12.8333 14H1.16667ZM7 7C7.92826 7 8.8185 6.63125 9.47487 5.97487C10.1313 5.3185 10.5 4.42826 10.5 3.5C10.5 2.57174 10.1313 1.6815 9.47487 1.02513C8.8185 0.368749 7.92826 0 7 0C6.07174 0 5.1815 0.368749 4.52513 1.02513C3.86875 1.6815 3.5 2.57174 3.5 3.5C3.5 4.42826 3.86875 5.3185 4.52513 5.97487C5.1815 6.63125 6.07174 7 7 7V7Z" fill="currentColor"/>
               </svg>
@@ -33,7 +33,7 @@ export default function Navigation() {
             </a>
           </li>
           <li className="navigation__item">
-            <a href='#education' className={!collapse ? 'navigation__link': 'navigation__link navigation__link_non-active'} to="/education">
+            <a href='#education' className={!collapse ? 'navigation__link': 'navigation__link navigation__link_non-active'}>
               <svg className="navigation__icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M2.33337 11.4979V8.16293L5.45073 10.4639C5.9222 10.812 6.4564 10.9952 7.00008 10.9952C7.54377 10.9952 8.07796 10.812 8.54943 10.4639L11.6668 8.16393V11.4979C11.6669 11.5636 11.6569 11.6287 11.6374 11.6895C11.6179 11.7502 11.5893 11.8054 11.5532 11.8519L11.5517 11.8529L11.5501 11.8559L11.5447 11.8619L11.5268 11.8839L11.4646 11.9579C11.4101 12.0189 11.3323 12.1049 11.2305 12.2059C10.9511 12.4817 10.6542 12.7269 10.343 12.9389C9.31363 13.641 8.16529 14.0051 7.00008 13.9989C5.83487 14.0051 4.68653 13.641 3.65716 12.9389C3.3462 12.7269 3.0496 12.4817 2.77049 12.2059C2.66786 12.1042 2.56872 11.9968 2.47338 11.8839L2.45549 11.8619C2.41737 11.8147 2.38694 11.7582 2.36598 11.6957C2.34501 11.6332 2.33393 11.566 2.33337 11.4979Z" fill="currentColor"/>
                 <path d="M13.8049 5.43193L8.16207 9.59693C7.80847 9.85801 7.40782 9.9954 7.00006 9.9954C6.5923 9.9954 6.19165 9.85801 5.83805 9.59693L0.777785 5.86193V10.4979C0.777785 10.6305 0.736812 10.7577 0.663881 10.8515C0.590949 10.9453 0.492033 10.9979 0.388892 10.9979C0.285752 10.9979 0.186835 10.9453 0.113904 10.8515C0.0409725 10.7577 5.9835e-08 10.6305 5.9835e-08 10.4979V4.99793C-3.88288e-05 4.90778 0.0188792 4.8193 0.0547517 4.74184C0.0906243 4.66439 0.142117 4.60084 0.20378 4.55793L5.83805 0.398929C6.19158 0.137555 6.59225 0 7.00006 0C7.40787 0 7.80854 0.137555 8.16207 0.398929L13.8049 4.56493C13.8642 4.60875 13.9135 4.6719 13.9477 4.74801C13.982 4.82412 14 4.91049 14 4.99843C14 5.08636 13.982 5.17274 13.9477 5.24885C13.9135 5.32496 13.8642 5.38811 13.8049 5.43193V5.43193Z" fill="currentColor"/>
@@ -44,7 +44,7 @@ export default function Navigation() {
             </a>
           </li>
           <li className="navigation__item">
-            <a className={!collapse ? 'navigation__link': 'navigation__link navigation__link_non-active'} to="#expertise">
+            <a href = '#expertise' className={!collapse ? 'navigation__link': 'navigation__link navigation__link_non-active'}>
               <svg className="navigation__icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M7.71252 2.98279L11.0172 6.28826L3.3047 14H0V10.6945L7.71252 2.98201V2.98279ZM8.81408 1.88122L10.4664 0.228093C10.6125 0.0820452 10.8106 0 11.0172 0C11.2238 0 11.4219 0.0820452 11.568 0.228093L13.7719 2.432C13.918 2.5781 14 2.77621 14 2.98279C14 3.18936 13.918 3.38748 13.7719 3.53357L12.1188 5.18592L8.81408 1.88122Z" fill="currentColor"/>
               </svg>

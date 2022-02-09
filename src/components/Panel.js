@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../accets/styles/modules/_panel.scss'
 import PhotoBox from './PhotoBox';
 import Navigation from './Navigation';
