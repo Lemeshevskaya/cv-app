@@ -1,0 +1,31 @@
+@use '../var';
+
+.expertise-list__item{
+	display:flex;
+	align-items:flex-start;
+	margin-bottom:30px;
+  font-family: var.$font-main;
+  line-height: 120%;
+}
+.expertise-list__date{
+	width:6.8rem;
+	margin-right:20px;
+  flex-shrink: 0;
+}
+.expertise-list__info {
+  flex-shrink: 3;
+  flex-grow: 0;
+}
+.expertise-list__date span{
+	color:var.$color-text-grey;
+	font-size:var.$size-title;
+}
+.expertise-list h3{
+  font-weight: var.$weight-bold;
+	margin-bottom:10px;
+  font-size:var.$size-title;
+}
+.expertise-list p {
+  font-size:var.$size-text;
+  line-height: 150%;
+}

@@ -3,8 +3,8 @@
 .panel {
   padding-top: 20px;
   position: fixed;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto;
   background-color: var.$color-text-durk;
   width: 16rem;
   min-height: 100vh;
@@ -26,8 +26,8 @@
   border-bottom-right-radius: 5px;
 }
 .panel__button {
-  position: fixed;
-  bottom: 10px;
+  align-self: end;
+  padding-bottom: 10px;
 }
 
 @media screen and (max-width: 600px) {
@@ -36,6 +36,21 @@
   }
   .panel_non-active {
     left: -3.4rem;
-    transition: all 0.5s linear;
+    transition: all 0.5s ease;
   }
+  .panel .button-main__text {
+    display: none;
+  }
+  .panel .button-main {
+    padding: 10px;
+  }
+  .panel .photoBox__main_menu {
+    opacity: 0;
+    font-size: 0;
+  }
+  .panel .photoBox__img-box_menu {
+    width:40px;
+	  height:40px;
+  }
+  
 }

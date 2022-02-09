@@ -13,20 +13,11 @@
   font-size: var.$size-title;
   font-weight: var.$weight-regular;
   line-height: 120%;
-  transition: all 1s ease;
+  transition: font-size 0.5s ease;
 }
 .button-main__icon {
   margin: 5px;
 }
 .button-main:hover {
   background-color: var.$color-text-green;
-}
-
-@media screen and (max-width: 600px) {
-  .button-main__text {
-    display: none;
-  }
-  .button-main {
-    padding: 10px;
-  }
 }

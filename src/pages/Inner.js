@@ -3,6 +3,7 @@ import '../accets/styles/pages/_inner.scss';
 import Panel from '../components/Panel';
 import Box from '../components/Box';
 import TimeLine from '../components/TimeLine';
+import Expertise from '../components/Expertise';
 import { useSelector } from 'react-redux';
 
 export default function Inner() {
@@ -33,6 +34,11 @@ export default function Inner() {
               "text": "Labore esse tempor nisi non mollit enim elit ullamco veniam elit duis nostrud. Enim pariatur ullamco dolor eu sunt ad velit aute eiusmod aliquip voluptate. Velit magna labore eiusmod eiusmod labore amet eiusmod. In duis eiusmod commodo duis. Exercitation Lorem sint do aliquip veniam duis elit quis culpa irure quis nulla. Reprehenderit fugiat amet sint commodo ex.\r\n"
             }
           ]} />
+        </Box>
+      </section>
+      <section id = 'expertise'>
+        <Box title='Experience'>
+          <Expertise data={[ { date: '2013-2014', info: { company: 'Google', job: 'Front-end developer / php programmer', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringil' } }, { date: '2012', info: { company: 'Twitter', job: 'Web developer', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor' } } ]} />
         </Box>
       </section>
       

@@ -1,48 +1,14 @@
-import React, { useState, useEffect }from 'react';
+import React from 'react';
 import '../accets/styles/modules/_photoBox.scss'
 
 export default function PhotoBox({name, title, description, avatar}) {
-  const [viewPhotoBox, setViewPhotoBox] = useState(false);
-
-  const showPhoto = () => {
-    if (window.innerWidth <= 600) {
-      setViewPhotoBox(true)
-    } else {
-      setViewPhotoBox(false);
-    }
-  };
-
-  useEffect(() => {
-    showPhoto();
-  }, []);
-
-  window.addEventListener('resize', showPhoto);
-console.log(viewPhotoBox);
-  const photoBox = () => {
-    if (!description) {
-      return (
-        <>
-          <div className = {viewPhotoBox ? 'photoBox__img-box photoBox__img-box_bar': 'photoBox__img-box photoBox__img-box_menu'}>
-            <img className='photoBox__img' src={avatar} alt="photo_user" />
-          </div>
-          <h1 className={viewPhotoBox ? 'photoBox__main_box': 'photoBox__main photoBox__main_menu'}>{name}</h1>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <div className = 'photoBox__img-box'>
-            <img className='photoBox__img' src={avatar} alt="photo_user" />
-          </div>
-          <h1 className='photoBox__main'>{name}</h1>
-        </>
-      )
-    }
-  }
-
+  
   return (
   <div className='photoBox'>
-    {photoBox()}
+    <div className = {!description ? 'photoBox__img-box photoBox__img-box_menu' : 'photoBox__img-box'}>
+            <img className = 'photoBox__img' src={avatar} alt="photo_user" />
+          </div>
+          <h1 className = {!description ? 'photoBox__main photoBox__main_menu' : 'photoBox__main'}>{name}</h1>
     <h2 className='photoBox__title'>{title}</h2>
     <p className='photoBox__text'>{description}</p>
   </div>
