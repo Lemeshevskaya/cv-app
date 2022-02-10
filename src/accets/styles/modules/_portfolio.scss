@@ -31,7 +31,8 @@
 	overflow:hidden;
 	position:relative;
 	min-height:200px;
-	display:flex
+	display:flex;
+	flex-wrap: wrap;
 }
 .portfolio__item{
 	width:308px;

@@ -1,17 +1,28 @@
 @use '../var';
 
-.panel {
-  padding-top: 20px;
+.panel__try {
   position: fixed;
-  display: grid;
-  grid-template-columns: auto;
+  height: 100vh;
   background-color: var.$color-text-durk;
-  width: 16rem;
-  min-height: 100vh;
   left: 0;
+  width: 16rem;
   transition: left 0.5s ease, width 0.5s ease;
 }
-.panel_non-active {
+
+.panel {
+  padding-top: 20px;
+  display: grid;
+  
+  grid-template-rows: auto;
+  background-color: var.$color-text-durk;
+  
+  height: 100vh;
+  // left: 0;
+  // transition: left 0.5s ease, width 0.5s ease;
+	overflow:auto;
+  // overflow-y: visible;
+}
+.panel__try_non-active {
   left: -16rem;
 }
 .panel__icon {

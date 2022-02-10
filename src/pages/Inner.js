@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../accets/styles/pages/_inner.scss';
 import Panel from '../components/Panel';
 import Box from '../components/Box';
@@ -9,6 +9,10 @@ import { useSelector } from 'react-redux';
 
 export default function Inner() {
   const visibility = useSelector(state => state.visibility.show);
+
+  // var element = document.querySelector("inner__main");
+
+  // element.scrollIntoView();
 
   return <div className='inner'>
     <Panel/>

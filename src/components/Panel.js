@@ -13,7 +13,8 @@ export default function Panel() {
   const visibility = useSelector(state => state.visibility.show);
 
   return (
-    <section className={visibility ? 'panel' : 'panel panel_non-active'}>
+    <div className={visibility ? 'panel__try' : 'panel__try panel__try_non-active'}>
+ <section className={visibility ? 'panel' : 'panel panel_non-active'}>
       <button className='panel__icon' onClick = {visibility ? () => dispatch(hideAction()) : () => dispatch(showAction())}>
         <FontAwesomeIcon icon="bars" />
       </button>
@@ -23,5 +24,7 @@ export default function Panel() {
         <Button icon = { < FontAwesomeIcon icon = "chevron-left" /> } text = 'Go back'/>
       </Link >
     </section>
+  </div>
+   
   ); 
 }
