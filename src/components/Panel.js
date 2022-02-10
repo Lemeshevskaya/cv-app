@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { showAction, hideAction } from '../actions/visibilityAction';
 import { useSelector, useDispatch } from 'react-redux';
 
-export default function Panel() {
+export default function Panel(props) {
   const dispatch = useDispatch();
   const visibility = useSelector(state => state.visibility.show);
 
@@ -19,7 +19,7 @@ export default function Panel() {
         <FontAwesomeIcon icon="bars" />
       </button>
       <PhotoBox name="John Doe" avatar="http://avatars0.githubusercontent.com/u/246180?v=4"/>
-      <Navigation/>
+      <Navigation educationRef = {props.education} expertiseRef = {props.expertise} aboutRef = {props.about}/>
       <Link className='panel__button' to = "/">
         <Button icon = { < FontAwesomeIcon icon = "chevron-left" /> } text = 'Go back'/>
       </Link >
