@@ -19,11 +19,11 @@ export default function Navigation({aboutRef, educationRef, expertiseRef}) {
 
   window.addEventListener('resize', showNavigation);
 
-  return <div>
+  return <>
     <nav className="navigation">
     <ul className="navigation__list">
           <li className="navigation__item">
-            <button className={!collapse ? 'navigation__link': 'navigation__link navigation__link_non-active'}
+            <button className= 'navigation__link'
             onClick = {() => {
               aboutRef.current.scrollIntoView()}}>
               <svg className="navigation__icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -103,5 +103,5 @@ export default function Navigation({aboutRef, educationRef, expertiseRef}) {
           </li>
         </ul>
       </nav>
-  </div>;
+  </>;
 }

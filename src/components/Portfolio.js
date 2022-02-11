@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import '../accets/styles/modules/_portfolio.scss'
 import card1 from '../accets/images/card_1.png';
 import card3 from '../accets/images/card_3.png';
 
 export default function Portfolio() {
-  return <div className ='portfolio'>
+
+  const [activelink, setActivelink] = useState('all');
+  
+  const handleClick = (item) => {
+    setActivelink(item);
+  };
+
+  return (
+  <div className ='portfolio'>
     <ul className ='portfolio__tabs'>
-      <li>
+      <li onClick = {() => handleClick('all')} className = {activelink === 'all' ? 'active' : ''}>
         <span>all</span>
       </li>
-      <li>
+      <li onClick = {() => handleClick('ui')} className = {activelink === 'ui' ? 'active' : ''}>
         <span>ui</span>
       </li>
-      <li>
+      <li onClick = {() => handleClick('code')} className = {activelink === 'code' ? 'active' : ''}>
         <span>code</span>
       </li>
     </ul>
@@ -54,5 +62,6 @@ export default function Portfolio() {
         </div>
       </li>
     </ul>
-  </div>;
+  </div>
+  )
 }

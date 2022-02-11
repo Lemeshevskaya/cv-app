@@ -10,20 +10,15 @@
 .navigation__link {
   text-decoration: none;
   color: var.$color-text-grey;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
   transition: all 0.5s ease;
 }
-.navigation__link_non-active {
-  grid-template-columns: 1fr;
-}
 .navigation__icon {
-  justify-self: center;
+  width: 55px;
   align-self: flex-end;
   margin-bottom: 3px;
 }
 .navigation__text {
-  justify-self: start;
   align-self: flex-end;
   font-family: var.$font-main;
   font-size: var.$size-title;
