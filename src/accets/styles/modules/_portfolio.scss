@@ -67,11 +67,9 @@
 	font-weight: var.$weight-bold;
 	font-size: var.$size-title;
 }
-.portfolio__text{
-	margin-bottom: 10px;
-	font-size: var.$size-text;
-}
 .portfolio__sourse{
+	margin-top: 10px;
+	display: inline-block;
 	font-size: var.$size-text;
 	color: var.$color-text-green;
 }

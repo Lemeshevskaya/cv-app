@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Info from './Info';
 import '../accets/styles/modules/_portfolio.scss'
 
 export default function Portfolio({data}) {
@@ -60,9 +61,7 @@ export default function Portfolio({data}) {
           <h3 className='portfolio__title'>
             {work.title}
           </h3>
-          <p className='portfolio__text'>
-            {work.text} 
-          </p>
+          <Info data = {work.text}/>
           <a className='portfolio__sourse' href="http//github.com"> View source</a>
         </div>
       </li>

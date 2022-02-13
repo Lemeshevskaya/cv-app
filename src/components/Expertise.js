@@ -1,4 +1,5 @@
 import React from 'react';
+import Info from './Info';
 import '../accets/styles/modules/_expertise.scss'
 
 export default function Expertise({data}) {
@@ -11,7 +12,7 @@ export default function Expertise({data}) {
         {dataExpertise.map((dataexp) => (
             <li className='expertise-list__item' key = {dataexp.id}>
               <div className='expertise-list__date'>
-                <h3>
+                <h3 className='expertise-list__title'>
                   {dataexp.event.info.company}
                 </h3>
                 <span>
@@ -19,12 +20,10 @@ export default function Expertise({data}) {
                 </span>
               </div>
               <div className='expertise-list__info'>
-                <h3>
+                <h3 className='expertise-list__title'>
                   {dataexp.event.info.job}
                 </h3>
-                <p>
-                  {dataexp.event.info.description}
-                </p>
+                <Info data = {dataexp.event.info.description}/>
               </div>
             </li>
         ))}

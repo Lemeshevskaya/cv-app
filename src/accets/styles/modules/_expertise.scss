@@ -19,12 +19,8 @@
 	color:var.$color-text-grey;
 	font-size:var.$size-title;
 }
-.expertise-list h3{
+.expertise-list__title {
   font-weight: var.$weight-bold;
 	margin-bottom:10px;
   font-size:var.$size-title;
-}
-.expertise-list p {
-  font-size:var.$size-text;
-  line-height: 150%;
 }

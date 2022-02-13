@@ -10,7 +10,6 @@ import { ReactComponent as ContactsIcon} from '../accets/images/icons/contacts.s
 
 export default function Navigation({data}) {
   const [collapse, setCollapse] = useState(false);
-  console.log(data);
 
   const showNavigation = () => {
     if (window.innerWidth <= 600) {
