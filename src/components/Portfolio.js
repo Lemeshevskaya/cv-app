@@ -1,66 +1,72 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../accets/styles/modules/_portfolio.scss'
-import card1 from '../accets/images/card_1.png';
-import card3 from '../accets/images/card_3.png';
 
-export default function Portfolio() {
+export default function Portfolio({data}) {
 
   const [activelink, setActivelink] = useState('all');
-  
-  const handleClick = (item) => {
-    setActivelink(item);
+  const [filterWorks, setFilterWorks] = useState(data);
+
+  const tabs = {
+    1: 'all',
+    2: 'ui',
+    3: 'code'
   };
+  const classLink = ((tab) => {
+    return `portfolio__link ${activelink === tab ? 'portfolio__link_active' : ''}`
+  });
+
+  useEffect(() => {
+    let result;
+    if(activelink !== tabs[1]) {
+      result = data.filter((work) => {
+        return work.type === activelink;
+      })
+    } else {
+      result = data;
+    }
+    setFilterWorks(result);
+  }, [activelink, data]);
 
   return (
   <div className ='portfolio'>
     <ul className ='portfolio__tabs'>
-      <li onClick = {() => handleClick('all')} className = {activelink === 'all' ? 'active' : ''}>
-        <span>all</span>
+      <li 
+      onClick = {() => {setActivelink(tabs[1])}} 
+      className = {classLink(tabs[1])}>
+        <span>
+          all
+        </span>
       </li>
-      <li onClick = {() => handleClick('ui')} className = {activelink === 'ui' ? 'active' : ''}>
-        <span>ui</span>
+      <li 
+      onClick = {() => {setActivelink(tabs[2])}} 
+      className = {classLink(tabs[2])}>
+        <span>
+          ui
+        </span>
       </li>
-      <li onClick = {() => handleClick('code')} className = {activelink === 'code' ? 'active' : ''}>
-        <span>code</span>
+      <li 
+      onClick = {() => {setActivelink(tabs[3])}} 
+      className = {classLink(tabs[3])}>
+        <span>
+          code
+        </span>
       </li>
     </ul>
     <ul className ='portfolio__filter-container'>
-      <li className ='portfolio__item ui'>
-        <img src = {card1}  alt ="card" />
+      { filterWorks.map((work) => (
+        <li key = {work.id}  className ={`portfolio__item ${work.type}`}>
+        <img src = {work.img}  alt ="card" />
         <div className ="portfolio__info">
-          <h3>Some text</h3>
-          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis 
+          <h3 className='portfolio__title'>
+            {work.title}
+          </h3>
+          <p className='portfolio__text'>
+            {work.text} 
           </p>
-          <a href="http//github.com"> View source</a>
+          <a className='portfolio__sourse' href="http//github.com"> View source</a>
         </div>
       </li>
-      <li className ='portfolio__item code'>
-        <img src = {card3} alt = "card" />
-        <div className = "portfolio__info">
-          <h3>Some text</h3>
-          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis 
-          </p>
-          <a href="http//github.com"> View source</a>
-        </div>
-      </li>
-      <li className ='portfolio__item ui'>
-        <img src = {card1} alt ="card" />
-        <div className = "portfolio__info">
-          <h3>Some text</h3>
-          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis 
-          </p>
-          <a href ="http//github.com"> View source</a>
-        </div>
-      </li>
-      <li className ='portfolio__item code'>
-        <img src = {card3} alt ="card" />
-        <div className = "portfolio__info">
-          <h3>Some text</h3>
-          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis 
-          </p>
-          <a href="http//github.com"> View source</a>
-        </div>
-      </li>
+      ))}
     </ul>
   </div>
   )

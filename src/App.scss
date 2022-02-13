@@ -1,4 +1,7 @@
+@use './accets/styles/var';
+
 .App {
   text-align: center;
   scroll-behavior: smooth;
+  font-family: var.$font-main;
 }

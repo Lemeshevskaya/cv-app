@@ -50,7 +50,6 @@
 	border-right:10px solid #eee
 }
 .timeline__title, .timeline__date  {
-	font-family: var.$font-main;
   font-size: var.$size-title;
   font-weight: var.$weight-semi-bold;
   line-height: 120%;
@@ -59,7 +58,6 @@
 	padding-bottom: 5px;
 }
 .timeline__text {
-	font-family: var.$font-main;
 	font-size: var.$size-text;
 	font-weight: var.$weight-regular;
 	line-height: 150%;

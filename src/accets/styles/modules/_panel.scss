@@ -1,6 +1,6 @@
 @use '../var';
 
-.panel__try {
+.panel {
   position: fixed;
   height: 100%;
   background-color: var.$color-text-durk;
@@ -8,8 +8,10 @@
   width: 16rem;
   transition: left 0.5s ease, width 0.5s ease;
 }
-
-.panel {
+.panel_non-active {
+  left: -16rem;
+}
+.panel__nav {
   padding-top: 20px;
   display: grid;
   grid-template-rows: 11rem auto;
@@ -17,9 +19,6 @@
   height: inherit;
 	overflow-y:auto;
   overflow-x: hidden;
-}
-.panel__try_non-active {
-  left: -16rem;
 }
 .panel__icon {
   width: 30px;
@@ -38,24 +37,24 @@
 }
 
 @media screen and (max-width: 600px) {
-  .panel__try {
+  .panel {
     width: 3.4rem;
   }
-  .panel__try_non-active {
+  .panel_non-active {
     left: -3.4rem;
     transition: all 0.5s ease;
   }
-  .panel .button-main__text {
+  .panel__nav .button-main__text {
     display: none;
   }
-  .panel .button-main {
+  .panel__nav .button-main {
     padding: 10px;
   }
-  .panel .photoBox__main_menu {
+  .panel__nav .photoBox__main_menu {
     opacity: 0;
     font-size: 0;
   }
-  .panel .photoBox__img-box_menu {
+  .panel__nav .photoBox__img-box_menu {
     width:40px;
 	  height:40px;
   }

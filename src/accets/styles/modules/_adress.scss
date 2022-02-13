@@ -1,0 +1,26 @@
+@use '../var';
+
+.contacts__item {
+	display:flex;
+	align-items:center;
+	margin-bottom:20px;
+}
+.contacts__link{
+	text-decoration: none;
+	color:var.$color-text-durk;
+}
+.contacts__content {
+	display: flex;
+	flex-direction: column;
+	font-size:var.$size-title;
+	color:var.$color-text-durk;
+}
+.contacts__title{
+	font-weight:var.$weight-bold;
+}
+.contacts__icon{
+	margin-right:20px;
+	color:var.$color-text-green;
+	font-size:28px;
+	min-width: 28px;
+}

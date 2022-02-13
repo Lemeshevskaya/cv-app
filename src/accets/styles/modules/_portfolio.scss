@@ -1,72 +1,77 @@
-.portfolio__tabs{
-	font-size:16px;
-	margin-bottom:20px
+@use '../var';
+
+.portfolio__tabs {
+	font-size: var.$size-title;
+	margin-bottom: 20px;
 }
-.portfolio__tabs li{
-	display:inline-block;
-	padding:0 0 0 10px;
-	margin:0 5px 0 0;
-	position:relative;
-	text-transform:capitalize
+.portfolio__link {
+	display: inline-block;
+	padding: 0 0 0 10px;
+	margin: 0 5px 0 0;
+	position: relative;
+	text-transform: capitalize;
 }
-.portfolio__tabs li span{
-	cursor:pointer
+.portfolio__link{
+	cursor: pointer;
 }
-.portfolio__tabs li.active span{
-	color:#26c17e
+.portfolio__link_active{
+	color: var.$color-text-green;
 }
-.portfolio__tabs li:first-child{
-	padding:0
+.portfolio__link:first-child{
+	padding: 0;
 }
-.portfolio__tabs li:first-child:after{
-	display:none
+.portfolio__link:first-child:after{
+	display: none;
 }
-.portfolio__tabs li:after{
-	content:"/";
-	position:absolute;
-	top:0;
-	left:0
+.portfolio__link:after{
+	content: "/";
+	position: absolute;
+	top: 0;
+	left: 0
 }
 .portfolio__filter-container{
-	overflow:hidden;
-	position:relative;
-	min-height:200px;
-	display:flex;
-	flex-wrap: wrap;
+	overflow: hidden;
+	position: relative;
+	min-height: 200px;
+	display: flex;
+	flex-wrap:  wrap;
 }
 .portfolio__item{
-	width:308px;
-	margin:0 20px 20px 0;
-	position:relative;
-	height:194px;
-	overflow:hidden
+	max-width: 308px;
+	max-height: 190px;
+	margin: 0 20px 20px 0;
+	position: relative;
+	overflow: hidden;
 }
 .portfolio__info{
-	height:194px;
-	overflow:auto;
-	position:absolute;
-	left:0;
-	padding:20px 15px;
-	background:hsla(0,0%,100%,.95);
-	border:1px solid #ddd;
-	box-sizing:border-box;
-	top:100%;
-	transition:all .5s ease 0s
+	height: 100%;
+	overflow: auto;
+	position: absolute;
+	left: 0;
+	padding: 20px 15px;
+	background: hsla(0,0%,100%,.95);
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	top: 100%;
+	transition: all .5s ease;
 }
 .portfolio__item:hover .portfolio__info{
-	top:0
+	top: 0
 }
 .portfolio__filter-container span{
-	display:block
+	display: block
 }
-.portfolio__info h3{
-	font:700 16px/19px "Open Sans",sans-serif;
-	margin-bottom:10px;
-  color:#26c17e
+.portfolio__title{
+	margin-bottom: 10px;
+  color: var.$color-text-green;
+	font-weight: var.$weight-bold;
+	font-size: var.$size-title;
 }
-.portfolio__info p{
-	margin-bottom:10px
+.portfolio__text{
+	margin-bottom: 10px;
+	font-size: var.$size-text;
 }
-.portfolio__info a{
-	text-decoration:underline
+.portfolio__sourse{
+	font-size: var.$size-text;
+	color: var.$color-text-green;
 }
