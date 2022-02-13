@@ -2,7 +2,7 @@ import React from 'react';
 import '../accets/styles/modules/_button.scss';
 
 export default function Button({text, icon}) {
-  return <>
+  return (
     <button className='button-main'>
       <span className='button-main__icon'>
         {icon}
@@ -11,6 +11,6 @@ export default function Button({text, icon}) {
         {text}
       </span>
     </button>
-  </>;
+  );
 }
  

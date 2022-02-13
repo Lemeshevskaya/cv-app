@@ -29,44 +29,44 @@ export default function Portfolio({data}) {
   }, [activelink]); // eslint-disable-line react-hooks/exhaustive-deps
   
   return (
-  <div className ='portfolio'>
-    <ul className ='portfolio__tabs'>
-      <li 
-      onClick = {() => {setActivelink(tabs[1])}} 
-      className = {classLink(tabs[1])}>
-        <span>
-          all
-        </span>
-      </li>
-      <li 
-      onClick = {() => {setActivelink(tabs[2])}} 
-      className = {classLink(tabs[2])}>
-        <span>
-          ui
-        </span>
-      </li>
-      <li 
-      onClick = {() => {setActivelink(tabs[3])}} 
-      className = {classLink(tabs[3])}>
-        <span>
-          code
-        </span>
-      </li>
-    </ul>
-    <ul className ='portfolio__filter-container'>
-      { filterWorks.map((work) => (
-        <li key = {work.id}  className ={`portfolio__item ${work.type}`}>
-        <img src = {work.img}  alt ="card" />
-        <div className ="portfolio__info">
-          <h3 className='portfolio__title'>
-            {work.title}
-          </h3>
-          <Info data = {work.text}/>
-          <a className='portfolio__sourse' href="http//github.com"> View source</a>
-        </div>
-      </li>
-      ))}
-    </ul>
-  </div>
+    <div className ='portfolio'>
+      <ul className ='portfolio__tabs'>
+        <li 
+        onClick = {() => {setActivelink(tabs[1])}} 
+        className = {classLink(tabs[1])}>
+          <span>
+            all
+          </span>
+        </li>
+        <li 
+        onClick = {() => {setActivelink(tabs[2])}} 
+        className = {classLink(tabs[2])}>
+          <span>
+            ui
+          </span>
+        </li>
+        <li 
+        onClick = {() => {setActivelink(tabs[3])}} 
+        className = {classLink(tabs[3])}>
+          <span>
+            code
+          </span>
+        </li>
+      </ul>
+      <ul className ='portfolio__filter-container'>
+        { filterWorks.map((work) => (
+          <li key = {work.id}  className ={`portfolio__item ${work.type}`}>
+          <img src = {work.img}  alt ="card" />
+          <div className ="portfolio__info">
+            <h3 className='portfolio__title'>
+              {work.title}
+            </h3>
+            <Info data = {work.text}/>
+            <a className='portfolio__sourse' href="http//github.com"> View source</a>
+          </div>
+        </li>
+        ))}
+      </ul>
+    </div>
   )
 }

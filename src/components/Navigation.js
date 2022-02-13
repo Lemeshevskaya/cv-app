@@ -27,86 +27,86 @@ export default function Navigation({data}) {
 
   window.addEventListener('resize', showNavigation);
 
-  return <>
+  return (
     <nav className="navigation">
-    <ul className="navigation__list">
-          <li className="navigation__item">
-            <button className= 'navigation__link'
-            onClick = {() => {
-              data.about.current.scrollIntoView()}}>
-              <UserIcon/>
-              <span className = {classText}>
-                About me
-              </span>
-            </button>
-          </li>
-          <li className="navigation__item">
-            <button  className = {classNavLink}
-            onClick = {() => {
-              data.education.current.scrollIntoView();
-            }}>
-              <EducationIcon/>
-              <span className = {classText}>
-                Education
-              </span>
-            </button>
-          </li>
-          <li className="navigation__item">
-            <button className = {classNavLink} 
+      <ul className="navigation__list">
+        <li className="navigation__item">
+          <button className= 'navigation__link'
+          onClick = {() => {
+            data.about.current.scrollIntoView()}}>
+            <UserIcon/>
+            <span className = {classText}>
+              About me
+            </span>
+          </button>
+        </li>
+        <li className="navigation__item">
+          <button  className = {classNavLink}
+          onClick = {() => {
+            data.education.current.scrollIntoView();
+          }}>
+            <EducationIcon/>
+            <span className = {classText}>
+              Education
+            </span>
+          </button>
+        </li>
+        <li className="navigation__item">
+          <button className = {classNavLink} 
+          onClick = {() => {
+            data.expertise.current.scrollIntoView();
+          }}>
+            <ExperienceIcon/>
+            <span className = {classText}>
+              Experience
+            </span>
+          </button>
+        </li>
+        <li className="navigation__item">
+          <button className = {classNavLink} 
             onClick = {() => {
               data.expertise.current.scrollIntoView();
             }}>
-              <ExperienceIcon/>
+            <SkillsIcon/>
+            <span className = {classText}>
+              Skills
+            </span>
+          </button>
+        </li>
+        <li className="navigation__item">
+          <button className = {classNavLink} 
+            onClick = {() => {
+              data.portfolio.current.scrollIntoView();
+            }}>
+              <PortfolioIcon/>
               <span className = {classText}>
-                Experience
-              </span>
-            </button>
-          </li>
-          <li className="navigation__item">
-            <button className = {classNavLink} 
-              onClick = {() => {
-                data.expertise.current.scrollIntoView();
-              }}>
-              <SkillsIcon/>
-              <span className = {classText}>
-                Skills
-              </span>
-            </button>
-          </li>
-          <li className="navigation__item">
-            <button className = {classNavLink} 
-              onClick = {() => {
-                data.portfolio.current.scrollIntoView();
-              }}>
-                <PortfolioIcon/>
-                <span className = {classText}>
-                  Portfolio
-                </span> 
-            </button>
-          </li>
-          <li className="navigation__item">
-            <button className = {classNavLink} 
-              onClick = {() => {
-                data.contacts.current.scrollIntoView();
-              }}>
-              <ContactsIcon/>
-              <span className = {classText}>
-                Contacts
-              </span>
-            </button>
-          </li>
-          <li className="navigation__item">
-            <button className = {classNavLink} 
-              onClick = {() => {
-                data.feedback.current.scrollIntoView();
-              }}>
-              <FeedbacksIcon/>
-              <span className = {classText}>
-                Feedbacks
-              </span>
-            </button>
-          </li>
-        </ul>
-      </nav>
-  </>;
+                Portfolio
+              </span> 
+          </button>
+        </li>
+        <li className="navigation__item">
+          <button className = {classNavLink} 
+            onClick = {() => {
+              data.contacts.current.scrollIntoView();
+            }}>
+            <ContactsIcon/>
+            <span className = {classText}>
+              Contacts
+            </span>
+          </button>
+        </li>
+        <li className="navigation__item">
+          <button className = {classNavLink} 
+            onClick = {() => {
+              data.feedback.current.scrollIntoView();
+            }}>
+            <FeedbacksIcon/>
+            <span className = {classText}>
+              Feedbacks
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  );
 }

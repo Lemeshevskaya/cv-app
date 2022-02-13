@@ -8,7 +8,6 @@ import { faTwitter, faFacebookF, faSkype } from "@fortawesome/free-brands-svg-ic
 library.add( faChevronLeft, faBars, faPhone, faTwitter, faEnvelope, faFacebookF, faSkype);
 
 function App() {
-  console.log(library);
   return (
     <div className="App">
       <Routes>

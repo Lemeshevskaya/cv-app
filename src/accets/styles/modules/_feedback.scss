@@ -8,8 +8,9 @@
   padding: 15px;
 }
 .feedback__reporter{
-	display:flex;
-	align-items:center;
+	display: flex;
+  flex-wrap: wrap;
+	align-items: center;
   margin-top: 18.5px;
 }
 .feedback__photo{

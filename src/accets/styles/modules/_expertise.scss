@@ -9,15 +9,10 @@
 .expertise-list__date{
 	width:6.8rem;
 	margin-right:20px;
-  flex-shrink: 0;
-}
-.expertise-list__info {
-  flex-shrink: 3;
-  flex-grow: 0;
-}
-.expertise-list__date span{
-	color:var.$color-text-grey;
-	font-size:var.$size-title;
+  .span {
+    color:var.$color-text-grey;
+	  font-size:var.$size-title;
+  }
 }
 .expertise-list__title {
   font-weight: var.$weight-bold;

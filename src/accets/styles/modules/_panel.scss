@@ -44,18 +44,21 @@
     left: -3.4rem;
     transition: all 0.5s ease;
   }
-  .panel__nav .button-main__text {
-    display: none;
+  .panel__nav {
+    .button-main__text {
+      display: none;
+    }
+    .button-main {
+      padding: 10px;
+    }
+    .photoBox__main_menu {
+      opacity: 0;
+      font-size: 0;
+    }
+    .photoBox__img-box_menu {
+      width:40px;
+      height:40px;
+    }
   }
-  .panel__nav .button-main {
-    padding: 10px;
-  }
-  .panel__nav .photoBox__main_menu {
-    opacity: 0;
-    font-size: 0;
-  }
-  .panel__nav .photoBox__img-box_menu {
-    width:40px;
-	  height:40px;
-  }
+   
 }

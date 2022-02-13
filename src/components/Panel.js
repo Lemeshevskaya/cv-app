@@ -24,7 +24,6 @@ export default function Panel(props) {
           <Button icon = { < FontAwesomeIcon icon = "chevron-left" /> } text = 'Go back'/>
         </Link >
       </div>
-  </section>
-   
+    </section>
   ); 
 }
