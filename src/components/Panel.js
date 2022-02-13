@@ -19,7 +19,7 @@ export default function Panel(props) {
           <FontAwesomeIcon icon="bars" />
         </button>
         <PhotoBox name="John Doe" avatar="http://avatars0.githubusercontent.com/u/246180?v=4"/>
-        <Navigation educationRef = {props.education} expertiseRef = {props.expertise} aboutRef = {props.about} portfolioRef = {props.portfolio} />
+        <Navigation data = {props} />
         <Link className='panel__button' to = "/">
           <Button icon = { < FontAwesomeIcon icon = "chevron-left" /> } text = 'Go back'/>
         </Link >

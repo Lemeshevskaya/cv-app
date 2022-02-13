@@ -8,8 +8,9 @@ import { ReactComponent as PortfolioIcon} from '../accets/images/icons/portfolio
 import { ReactComponent as FeedbacksIcon} from '../accets/images/icons/feedbacks.svg';
 import { ReactComponent as ContactsIcon} from '../accets/images/icons/contacts.svg';
 
-export default function Navigation({aboutRef, educationRef, expertiseRef, portfolioRef, contactsRef}) {
+export default function Navigation({data}) {
   const [collapse, setCollapse] = useState(false);
+  console.log(data);
 
   const showNavigation = () => {
     if (window.innerWidth <= 600) {
@@ -33,7 +34,7 @@ export default function Navigation({aboutRef, educationRef, expertiseRef, portfo
           <li className="navigation__item">
             <button className= 'navigation__link'
             onClick = {() => {
-              aboutRef.current.scrollIntoView()}}>
+              data.about.current.scrollIntoView()}}>
               <UserIcon/>
               <span className = {classText}>
                 About me
@@ -43,7 +44,7 @@ export default function Navigation({aboutRef, educationRef, expertiseRef, portfo
           <li className="navigation__item">
             <button  className = {classNavLink}
             onClick = {() => {
-              educationRef.current.scrollIntoView();
+              data.education.current.scrollIntoView();
             }}>
               <EducationIcon/>
               <span className = {classText}>
@@ -54,7 +55,7 @@ export default function Navigation({aboutRef, educationRef, expertiseRef, portfo
           <li className="navigation__item">
             <button className = {classNavLink} 
             onClick = {() => {
-              expertiseRef.current.scrollIntoView();
+              data.expertise.current.scrollIntoView();
             }}>
               <ExperienceIcon/>
               <span className = {classText}>
@@ -65,7 +66,7 @@ export default function Navigation({aboutRef, educationRef, expertiseRef, portfo
           <li className="navigation__item">
             <button className = {classNavLink} 
               onClick = {() => {
-                expertiseRef.current.scrollIntoView();
+                data.expertise.current.scrollIntoView();
               }}>
               <SkillsIcon/>
               <span className = {classText}>
@@ -76,7 +77,7 @@ export default function Navigation({aboutRef, educationRef, expertiseRef, portfo
           <li className="navigation__item">
             <button className = {classNavLink} 
               onClick = {() => {
-                portfolioRef.current.scrollIntoView();
+                data.portfolio.current.scrollIntoView();
               }}>
                 <PortfolioIcon/>
                 <span className = {classText}>
@@ -87,7 +88,7 @@ export default function Navigation({aboutRef, educationRef, expertiseRef, portfo
           <li className="navigation__item">
             <button className = {classNavLink} 
               onClick = {() => {
-                contactsRef.current.scrollIntoView();
+                data.contacts.current.scrollIntoView();
               }}>
               <ContactsIcon/>
               <span className = {classText}>
@@ -98,7 +99,7 @@ export default function Navigation({aboutRef, educationRef, expertiseRef, portfo
           <li className="navigation__item">
             <button className = {classNavLink} 
               onClick = {() => {
-                expertiseRef.current.scrollIntoView();
+                data.expertise.current.scrollIntoView();
               }}>
               <FeedbacksIcon/>
               <span className = {classText}>
