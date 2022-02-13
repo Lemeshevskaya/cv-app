@@ -98,7 +98,7 @@ export default function Navigation({data}) {
           <li className="navigation__item">
             <button className = {classNavLink} 
               onClick = {() => {
-                data.expertise.current.scrollIntoView();
+                data.feedback.current.scrollIntoView();
               }}>
               <FeedbacksIcon/>
               <span className = {classText}>

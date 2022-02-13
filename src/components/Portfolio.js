@@ -26,8 +26,8 @@ export default function Portfolio({data}) {
       result = data;
     }
     setFilterWorks(result);
-  }, [activelink, data]);
-
+  }, [activelink]); // eslint-disable-line react-hooks/exhaustive-deps
+  
   return (
   <div className ='portfolio'>
     <ul className ='portfolio__tabs'>

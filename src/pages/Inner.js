@@ -6,6 +6,7 @@ import TimeLine from '../components/TimeLine';
 import Expertise from '../components/Expertise';
 import Portfolio from '../components/Portfolio';
 import Adress from '../components/Adress';
+import Feedback from '../components/Feedback';
 import card1 from '../accets/images/card_1.png';
 import card3 from '../accets/images/card_3.png';
 import { useSelector } from 'react-redux';
@@ -19,6 +20,7 @@ export default function Inner() {
   const expertiseRef = useRef();
   const portfolioRef = useRef();
   const contactsRef = useRef();
+  const feedbackRef = useRef();
 
   return (
   <div className='inner'>
@@ -27,7 +29,8 @@ export default function Inner() {
     about = {aboutRef} 
     expertise = {expertiseRef} 
     portfolio = {portfolioRef} 
-    contacts = {contactsRef}/>
+    contacts = {contactsRef}
+    feedback = {feedbackRef}/>
     <main className={visibility ? 'inner__main inner__main_non-active' : 'inner__main inner__main_active'}>
       <section ref = {aboutRef}>
         <Box title='About me' content='Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque' />
@@ -101,6 +104,11 @@ export default function Inner() {
         <Box title = 'Contacts'>
           <Adress/>
         </Box>
+      </section>
+      <section ref = {feedbackRef}>
+          <Box title = 'Feedback'>
+            <Feedback data={[ {feedback: ' Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ', reporter: { photoUrl: 'http://avatars0.githubusercontent.com/u/246180?v=4"', name: 'John Doe', citeUrl: 'https://www.citeexample.com' } }, {feedback: ' Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ', reporter: { photoUrl: 'http://avatars0.githubusercontent.com/u/246180?v=4"', name: 'John Doe', citeUrl: 'https://www.citeexample.com' } } ]} />
+          </Box>
       </section>
     </main>
   </div>
