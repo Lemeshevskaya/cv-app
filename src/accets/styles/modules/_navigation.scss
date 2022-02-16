@@ -25,9 +25,6 @@
   line-height: 120%;
   transition: all 0.5 ease;
 }
-.navigation__text_non-active {
-  font-size: 0;
-}
 .navigation__link:hover {
   color: var.$color-text-green;
 }
@@ -52,4 +49,10 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var.$color-text-durk; 
+}
+
+@media screen and (max-width: 600px) {
+  .navigation__text {
+    font-size: 0;
+  }
 }

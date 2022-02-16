@@ -5,7 +5,7 @@ import Box from '../components/Box';
 import TimeLine from '../components/TimeLine';
 import Expertise from '../components/Expertise';
 import Portfolio from '../components/Portfolio';
-import Adress from '../components/Adress';
+import Address from '../components/Address';
 import Feedback from '../components/Feedback';
 import card1 from '../accets/images/card_1.png';
 import card3 from '../accets/images/card_3.png';
@@ -17,7 +17,7 @@ export default function Inner() {
 
   const educationRef = useRef();
   const aboutRef = useRef();
-  const expertiseRef = useRef();
+  const experienceRef = useRef();
   const portfolioRef = useRef();
   const contactsRef = useRef();
   const feedbackRef = useRef();
@@ -27,7 +27,7 @@ export default function Inner() {
     <Panel 
       education = {educationRef} 
       about = {aboutRef} 
-      expertise = {expertiseRef} 
+      experience = {experienceRef} 
       portfolio = {portfolioRef} 
       contacts = {contactsRef}
       feedback = {feedbackRef}/>
@@ -56,7 +56,7 @@ export default function Inner() {
           ]} />
         </Box>
       </section>
-      <section ref = {expertiseRef}>
+      <section ref = {experienceRef}>
         <Box title='Experience'>
           <Expertise data={[ { date: '2013-2014', info: { company: 'Google', job: 'Front-end developer / php programmer', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringil' } }, { date: '2012', info: { company: 'Twitter', job: 'Web developer', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor' } } ]} />
         </Box>
@@ -102,7 +102,7 @@ export default function Inner() {
       </section>
       <section ref = {contactsRef}>
         <Box title = 'Contacts'>
-          <Adress/>
+          <Address/>
         </Box>
       </section>
       <section ref = {feedbackRef}>

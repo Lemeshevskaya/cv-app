@@ -7,7 +7,7 @@
 }
 .contacts__link{
 	text-decoration: none;
-	color:var.$color-text-durk;
+	color:var.$color-text-grey;
 }
 .contacts__content {
 	display: flex;
@@ -16,7 +16,9 @@
 	color:var.$color-text-durk;
 }
 .contacts__title{
+	text-decoration: none;
 	font-weight:var.$weight-bold;
+	color:var.$color-text-durk;
 }
 .contacts__icon{
 	margin-right:20px;

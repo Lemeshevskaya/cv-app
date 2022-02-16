@@ -1,14 +1,15 @@
 @use '../var';
 
-.expertise-list__item{
-	display:flex;
-	align-items:flex-start;
-	margin-bottom:30px;
+.expertise-list__item {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 30px;
   line-height: 120%;
 }
-.expertise-list__date{
-	width:6.8rem;
-	margin-right:20px;
+.expertise-list__date {
+	width: 6.8rem;
+	margin-right: 20px;
+	flex-shrink: 0;
   .span {
     color:var.$color-text-grey;
 	  font-size:var.$size-title;

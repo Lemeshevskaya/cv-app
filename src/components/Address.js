@@ -1,5 +1,5 @@
 import React from 'react';
-import '../accets/styles/modules/_adress.scss';
+import '../accets/styles/modules/_address.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Adress() {
@@ -7,10 +7,10 @@ export default function Adress() {
     <address className='contacts'>
       <dl className='contacts__item'>
         <dt className='contacts__icon'>
-          <FontAwesomeIcon icon="phone" />
+          <FontAwesomeIcon icon="phone" flip="horizontal" />
         </dt>
         <dd className='contacts__content'>
-          <a className='contacts__link contacts__title' href="tel:+500 342 242">
+          <a className='contacts__title' href="tel:+500 342 242">
             500 342 242
           </a>
         </dd>
@@ -20,7 +20,7 @@ export default function Adress() {
           <FontAwesomeIcon icon="envelope" />
         </dt>
         <dd className='contacts__content'>
-          <a className='contacts__link contacts__title' href="mailto:office@kamsolutions.pl">
+          <a className='contacts__title' href="mailto:office@kamsolutions.pl">
             office@kamsolutions.pl
           </a>
         </dd>
