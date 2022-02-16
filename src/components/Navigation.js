@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../accets/styles/modules/_navigation.scss'
 import { ReactComponent as UserIcon} from '../accets/images/icons/user.svg';
 import { ReactComponent as EducationIcon} from '../accets/images/icons//education.svg';

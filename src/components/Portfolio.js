@@ -7,23 +7,21 @@ export default function Portfolio({data}) {
   const [activelink, setActivelink] = useState('all');
   const [filterWorks, setFilterWorks] = useState(data);
 
-  const tabs = {
-    1: 'all',
-    2: 'ui',
-    3: 'code'
-  };
-  const classLink = ((tab) => {
-    return `portfolio__link ${activelink === tab ? 'portfolio__link_active' : ''}`
-  });
+  const tabs = [
+    {link: 'all'},
+    {link: 'ui'},
+    {link: 'code'}
+  ];
 
   useEffect(() => {
     let result;
-    if(activelink !== tabs[1]) {
+    if (activelink === 'all') {
+      result = data;
+    }
+    else {
       result = data.filter((work) => {
         return work.type === activelink;
       })
-    } else {
-      result = data;
     }
     setFilterWorks(result);
   }, [activelink]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -31,27 +29,15 @@ export default function Portfolio({data}) {
   return (
     <div className ='portfolio'>
       <ul className ='portfolio__tabs'>
-        <li 
-        onClick = {() => {setActivelink(tabs[1])}} 
-        className = {classLink(tabs[1])}>
-          <span>
-            all
-          </span>
-        </li>
-        <li 
-        onClick = {() => {setActivelink(tabs[2])}} 
-        className = {classLink(tabs[2])}>
-          <span>
-            ui
-          </span>
-        </li>
-        <li 
-        onClick = {() => {setActivelink(tabs[3])}} 
-        className = {classLink(tabs[3])}>
-          <span>
-            code
-          </span>
-        </li>
+        { tabs.map((tab) => (
+          <li 
+          onClick = {() => {setActivelink(tab.link)}}
+          className = {activelink === tab.link ? 'portfolio__link portfolio__link_active' : 'portfolio__link'}>
+            <span>
+              {tab.link}
+            </span>
+          </li>
+        ))}
       </ul>
       <ul className ='portfolio__filter-container'>
         { filterWorks.map((work) => (
