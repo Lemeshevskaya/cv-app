@@ -1,12 +1,12 @@
 import React from 'react';
 import '../assets/styles/modules/_navigation.scss'
-import { ReactComponent as UserIcon} from '../accets/images/icons/user.svg';
-import { ReactComponent as EducationIcon} from '../accets/images/icons//education.svg';
-import { ReactComponent as ExperienceIcon} from '../accets/images/icons/experience.svg';
-import { ReactComponent as SkillsIcon} from '../accets/images/icons/skills.svg';
-import { ReactComponent as PortfolioIcon} from '../accets/images/icons/portfolio.svg';
-import { ReactComponent as FeedbacksIcon} from '../accets/images/icons/feedbacks.svg';
-import { ReactComponent as ContactsIcon} from '../accets/images/icons/contacts.svg';
+import { ReactComponent as UserIcon} from '../assets/images/icons/user.svg';
+import { ReactComponent as EducationIcon} from '../assets/images/icons//education.svg';
+import { ReactComponent as ExperienceIcon} from '../assets/images/icons/experience.svg';
+import { ReactComponent as SkillsIcon} from '../assets/images/icons/skills.svg';
+import { ReactComponent as PortfolioIcon} from '../assets/images/icons/portfolio.svg';
+import { ReactComponent as FeedbacksIcon} from '../assets/images/icons/feedbacks.svg';
+import { ReactComponent as ContactsIcon} from '../assets/images/icons/contacts.svg';
 
 export default function Navigation({data}) {
 
