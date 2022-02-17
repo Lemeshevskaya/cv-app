@@ -1,5 +1,5 @@
 import React from 'react';
-import '../accets/styles/modules/_photoBox.scss'
+import '../assets/styles/modules/_photoBox.scss'
 
 export default function PhotoBox({name, title, description, avatar}) {
   

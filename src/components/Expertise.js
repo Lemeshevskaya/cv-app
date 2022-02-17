@@ -1,6 +1,6 @@
 import React from 'react';
 import Info from './Info';
-import '../accets/styles/modules/_expertise.scss'
+import '../assets/styles/modules/_expertise.scss'
 
 export default function Expertise({data}) {
 

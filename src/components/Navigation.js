@@ -1,5 +1,5 @@
 import React from 'react';
-import '../accets/styles/modules/_navigation.scss'
+import '../assets/styles/modules/_navigation.scss'
 import { ReactComponent as UserIcon} from '../accets/images/icons/user.svg';
 import { ReactComponent as EducationIcon} from '../accets/images/icons//education.svg';
 import { ReactComponent as ExperienceIcon} from '../accets/images/icons/experience.svg';

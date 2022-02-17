@@ -1,5 +1,5 @@
 import React from 'react';
-import '../accets/styles/modules/_timeline.scss'
+import '../assets/styles/modules/_timeline.scss'
 
 export default function TimeLine({data}) {
   

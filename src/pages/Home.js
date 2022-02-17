@@ -1,7 +1,7 @@
 import React from 'react';
 import PhotoBox from '../components/PhotoBox';
 import Button from '../components/Button';
-import '../accets/styles/pages/_home.scss';
+import '../assets/styles/pages/_home.scss';
 import { Link } from 'react-router-dom';
 
 export default function Home() {

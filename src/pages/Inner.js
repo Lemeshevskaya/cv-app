@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import '../accets/styles/pages/_inner.scss';
+import '../assets/styles/pages/_inner.scss';
 import Panel from '../components/Panel';
 import Box from '../components/Box';
 import TimeLine from '../components/TimeLine';
@@ -7,8 +7,9 @@ import Expertise from '../components/Expertise';
 import Portfolio from '../components/Portfolio';
 import Address from '../components/Address';
 import Feedback from '../components/Feedback';
-import card1 from '../accets/images/card_1.png';
-import card3 from '../accets/images/card_3.png';
+import GoTop from '../components/GoTop';
+import card1 from '../assets/images/card_1.png';
+import card3 from '../assets/images/card_3.png';
 import { useSelector } from 'react-redux';
 
 export default function Inner() {
@@ -110,6 +111,7 @@ export default function Inner() {
             <Feedback data={[ {feedback: ' Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ', reporter: { photoUrl: 'http://avatars0.githubusercontent.com/u/246180?v=4"', name: 'John Doe', citeUrl: 'https://www.citeexample.com' } }, {feedback: ' Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ', reporter: { photoUrl: 'http://avatars0.githubusercontent.com/u/246180?v=4"', name: 'John Doe', citeUrl: 'https://www.citeexample.com' } } ]} />
           </Box>
       </section>
+      <GoTop/>
     </main>
   </div>
 )}

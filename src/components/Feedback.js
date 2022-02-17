@@ -1,5 +1,5 @@
 import React from 'react';
-import '../accets/styles/modules/_feedback.scss'
+import '../assets/styles/modules/_feedback.scss';
 import Info from './Info';
 
 export default function Feedback({data}) {

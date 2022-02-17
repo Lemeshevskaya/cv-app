@@ -1,5 +1,5 @@
 import React from 'react';
-import '../accets/styles/modules/_button.scss';
+import '../assets/styles/modules/_button.scss';
 
 export default function Button({text, icon}) {
   
@@ -10,9 +10,11 @@ export default function Button({text, icon}) {
           {icon}
         </span>
       }
-      <span className='button-main__text'>
-        {text}
-      </span>
+      {text && 
+        <span className='button-main__text'>
+          {text}
+        </span>
+      }
     </button>
   );
 }

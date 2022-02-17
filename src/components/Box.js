@@ -1,6 +1,6 @@
 import React from 'react';
 import Info from './Info';
-import '../accets/styles/modules/_box.scss'
+import '../assets/styles/modules/_box.scss'
 
 export default function Box(props) {
   return (

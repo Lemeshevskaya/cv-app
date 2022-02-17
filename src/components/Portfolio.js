@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Info from './Info';
-import '../accets/styles/modules/_portfolio.scss'
+import '../assets/styles/modules/_portfolio.scss'
 
 export default function Portfolio({data}) {
 
@@ -30,7 +30,7 @@ export default function Portfolio({data}) {
     <div className ='portfolio'>
       <ul className ='portfolio__tabs'>
         { tabs.map((tab) => (
-          <li 
+          <li key = {tab.link}
           onClick = {() => {setActivelink(tab.link)}}
           className = {activelink === tab.link ? 'portfolio__link portfolio__link_active' : 'portfolio__link'}>
             <span>

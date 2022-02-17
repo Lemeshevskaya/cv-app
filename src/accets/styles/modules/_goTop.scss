@@ -1,0 +1,16 @@
+.go-top__hidden {
+  display: none;
+}
+.go-top {
+  position: fixed;
+  bottom: 0;
+  right: 36px;
+  .button-main {
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

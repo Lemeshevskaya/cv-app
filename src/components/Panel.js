@@ -1,5 +1,5 @@
 import React from 'react';
-import '../accets/styles/modules/_panel.scss'
+import '../assets/styles/modules/_panel.scss'
 import PhotoBox from './PhotoBox';
 import Navigation from './Navigation';
 import Button from './Button';
