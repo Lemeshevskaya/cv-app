@@ -8,7 +8,8 @@ export default function Box(props) {
       <h2 className='box__title'>
         {props.title}
       </h2>
-      <Info data = {props.content}/>
+      {props.content && 
+      <Info data = {props.content}/>}
       {props.children}
     </div>
   );

@@ -3,7 +3,8 @@
 .timeline {
 	min-height: 30vh;
 	max-height: 80vh;
-	overflow: auto
+	overflow: auto;
+	animation: show 1s 1 normal ease-in-out;
 }
 .timeline__list {
 	position: relative;
@@ -64,4 +65,22 @@
 	font-weight: var.$weight-regular;
 	line-height: 150%;
 	text-align: justify;
+}
+.timeLine__error{
+	text-align: center;
+	color: red;
+}
+
+@keyframes show {
+	from {
+			opacity: 0;
+			transform: scale(0, 0);
+	}
+	50% {
+			opacity: 1;
+			transform: scale(1.1, 1.1);
+	}
+	to {
+			transform: scale(1, 1);
+	}
 }

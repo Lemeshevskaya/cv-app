@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 import Button from './Button';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
-import { showAction, hideAction } from '../actions/visibilityAction';
+import { showAction, hideAction } from '../features/panel/panelSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function Panel(props) {

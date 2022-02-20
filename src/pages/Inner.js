@@ -1,5 +1,7 @@
-import React, { useRef } from 'react';
-import '../assets/styles/pages/_inner.scss';
+import React, { useRef, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getEducations } from '../features/education/educationSlice'
+
 import Panel from '../components/Panel';
 import Box from '../components/Box';
 import TimeLine from '../components/TimeLine';
@@ -8,13 +10,19 @@ import Portfolio from '../components/Portfolio';
 import Address from '../components/Address';
 import Feedback from '../components/Feedback';
 import GoTop from '../components/GoTop';
+import Spinner from '../components/Spinner';
+
 import card1 from '../assets/images/card_1.png';
 import card3 from '../assets/images/card_3.png';
-import { useSelector } from 'react-redux';
+
+import '../assets/styles/pages/_inner.scss';
 
 export default function Inner() {
 
+  const dispatch = useDispatch();
   const visibility = useSelector(state => state.visibility.show);
+  const educationsData = useSelector(state => state.education.educations.educations);
+  const loadingEducation = useSelector(state => state.education.status);
 
   const educationRef = useRef();
   const aboutRef = useRef();
@@ -22,6 +30,10 @@ export default function Inner() {
   const portfolioRef = useRef();
   const contactsRef = useRef();
   const feedbackRef = useRef();
+
+  useEffect(() => {
+    dispatch(getEducations());
+  }, [dispatch])
 
   return (
   <div className='inner'>
@@ -38,23 +50,9 @@ export default function Inner() {
       </section>
       <section ref={educationRef}>
         <Box title='Education'>
-          <TimeLine data={[
-            {
-              "date": 2001,
-              "title": "Title 0",
-              "text": "Elit voluptate ad nostrud laboris. Elit incididunt mollit enim enim id id laboris dolore et et mollit. Mollit adipisicing ullamco exercitation ullamco proident aute enim nisi. Dolore eu fugiat consectetur nulla sunt Lorem ex ad. Anim eiusmod do tempor fugiat minim do aliqua amet ex dolore velit.\r\n"
-            },
-            {
-              "date": 2000,
-              "title": "Title 1",
-              "text": "Et irure culpa ad proident labore excepteur elit dolore. Quis commodo elit culpa eiusmod dolor proident non commodo excepteur aute duis duis eu fugiat. Eu duis occaecat nulla eiusmod non esse cillum est aute elit amet cillum commodo.\r\n"
-            },
-            {
-              "date": 2012,
-              "title": "Title 2",
-              "text": "Labore esse tempor nisi non mollit enim elit ullamco veniam elit duis nostrud. Enim pariatur ullamco dolor eu sunt ad velit aute eiusmod aliquip voluptate. Velit magna labore eiusmod eiusmod labore amet eiusmod. In duis eiusmod commodo duis. Exercitation Lorem sint do aliquip veniam duis elit quis culpa irure quis nulla. Reprehenderit fugiat amet sint commodo ex.\r\n"
-            }
-          ]} />
+          {loadingEducation 
+          ? <Spinner/>
+          : <TimeLine data = { educationsData } />}
         </Box>
       </section>
       <section ref = {experienceRef}>

@@ -1,0 +1,19 @@
+@use '../var';
+
+.spinner {
+  color: var.$color-text-green;
+  margin: 0 auto;
+  width: 30px;
+  font-size: 30px;
+  animation: rotation 3s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
