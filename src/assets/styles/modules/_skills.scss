@@ -1,0 +1,33 @@
+@use '../var';
+
+.skills__tabs {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  font-size: 12px;
+  color: var.$color-text-grey;
+  border-top: 1px solid var.$color-text-grey;
+}
+.skills__tab {
+  position: relative;
+  padding-top: 10px;
+  width: min-content;
+}
+.skills__tab::after{
+  content: " ";
+  height: 10px;
+	position: absolute;
+  width: 100%;
+  border-left: 1px solid var.$color-text-grey;
+  bottom: 100%;
+}
+.skills__tab:first-child::after {
+  left: 0;
+}
+.skills__tab:last-child::after {
+  left: 100%;
+}
+.skills__tab:not(:first-child):not(:last-child):after {
+  left: 50%;
+}

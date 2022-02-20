@@ -11,6 +11,7 @@ import Address from '../components/Address';
 import Feedback from '../components/Feedback';
 import GoTop from '../components/GoTop';
 import Spinner from '../components/Spinner';
+import Skills from '../components/Skills'
 
 import card1 from '../assets/images/card_1.png';
 import card3 from '../assets/images/card_3.png';
@@ -27,6 +28,7 @@ export default function Inner() {
   const educationRef = useRef();
   const aboutRef = useRef();
   const experienceRef = useRef();
+  const skillsRef = useRef();
   const portfolioRef = useRef();
   const contactsRef = useRef();
   const feedbackRef = useRef();
@@ -41,6 +43,7 @@ export default function Inner() {
       education = {educationRef} 
       about = {aboutRef} 
       experience = {experienceRef} 
+      skills = {skillsRef}
       portfolio = {portfolioRef} 
       contacts = {contactsRef}
       feedback = {feedbackRef}/>
@@ -58,6 +61,11 @@ export default function Inner() {
       <section ref = {experienceRef}>
         <Box title='Experience'>
           <Expertise data={[ { date: '2013-2014', info: { company: 'Google', job: 'Front-end developer / php programmer', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringil' } }, { date: '2012', info: { company: 'Twitter', job: 'Web developer', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor' } } ]} />
+        </Box>
+      </section>
+      <section ref = {skillsRef}>
+        <Box title='Skills'>
+          <Skills/>
         </Box>
       </section>
       <section ref =  {portfolioRef}>
