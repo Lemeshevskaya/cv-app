@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import { useSelector, useDispatch } from 'react-redux'; 
 import { postSkills } from '../features/skills/skillsSlice'
@@ -32,7 +32,7 @@ const validate = values => {
 export default function FormSkills() {
 
   const dispatch = useDispatch();
-  const loadingSkills = useSelector(state => state.skills.status);
+  //const loadingSkills = useSelector(state => state.skills.status);
   // Pass the useFormik() hook initial form values, a validate function that will be called when
   // form values change or fields are blurred, and a submit function that will
   // be called when the form is submitted
@@ -43,9 +43,18 @@ export default function FormSkills() {
     },
     validate,
     onSubmit: values => {
-      localStorage.setItem('name', values.name);
-      localStorage.setItem('range', values.range);
-      dispatch(postSkills());
+      let skill = {
+        name: values.name,
+        range: values.range
+      };
+      let skills = [];
+      skills.push(skill);
+      if (localStorage.getItem('skill')) {
+        skills = JSON.parse(localStorage.getItem('skill'));
+        skills.push(skill);
+      }
+      localStorage.setItem('skill', JSON.stringify(skills));
+      dispatch(postSkills(skill));
       formik.values.name = '';
       formik.values.range = '';
     },
@@ -62,7 +71,7 @@ export default function FormSkills() {
             name="name"
             type="text"
             onChange={formik.handleChange}
-            value={formik.values.name}
+            value= {formik.values.name}
             placeholder= 'Enter skill name'
           />
           {formik.errors.name ? <div className='skills__error'>{formik.errors.name}</div> : null}
@@ -84,6 +93,5 @@ export default function FormSkills() {
         <Button text = 'Add skill' disabled={!(formik.isValid && formik.dirty)}/>
       </form>
     </div>
-    
   );
 };

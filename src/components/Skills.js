@@ -13,11 +13,10 @@ export default function Skills({data}) {
   
   return (
     <>
-    
       <ul className='slills__list'>
         {
           data.map((skill) => (
-            <li key= {skill.id} className='skills__item' style= {{width: ` ${skill.range}%`}}>
+            <li key= {skill.name} className='skills__item' style= {{width: ` ${skill.range}%`}}>
               <span className='skills__text'>
                 {skill.name}
               </span>

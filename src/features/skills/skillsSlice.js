@@ -8,16 +8,17 @@ const initialState = {
 
 export const postSkills = createAsyncThunk(
   'skills/postSkills',
-  async (_, { rejectWithValue }) => {
+  async (skill, { rejectWithValue }) => {
     try {
       const response = await fetch('api/skills', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({name: localStorage.getItem('name'), range: localStorage.getItem('range')}),
+        body: JSON.stringify({name: skill.name, range: skill.range}),
       })
       const data = await response.json();
+      console.log(data)
       return data
     } catch (err) {
       console.log(err);
@@ -26,25 +27,30 @@ export const postSkills = createAsyncThunk(
   }
 )
 
-export const getSkills = createAsyncThunk(
-  'skills/getSkills',
-  async (_, { rejectWithValue }) => {
-    try {
-      const response = await fetch('api/skills', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
+export const getSkills = 
+    createAsyncThunk(
+      'skills/getSkills',
+      async (_, { rejectWithValue }) => {
+        try {
+          if (localStorage.getItem('skill')) {
+            return JSON.parse(localStorage.getItem('skill'));
+          } else {
+            const response = await fetch('api/skills', {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+              }
+            })
+            const data = await response.json();
+            console.log(data);
+            return data
+          }
+        } catch (err) {
+          console.log(err);
+          return rejectWithValue(err.response.data)
         }
-      })
-      const data = await response.json();
-      console.log(data);
-      return data
-    } catch (err) {
-      console.log(err);
-      return rejectWithValue(err.response.data)
-    }
-  }
-)
+      }
+    )
 
 const skillsThunk = createSlice({
   name: 'skills',
@@ -58,7 +64,7 @@ const skillsThunk = createSlice({
     },
     [postSkills.fulfilled]: (state, {payload}) => {
       return {
-        ...state,  statusPost: 'complite'
+        ...state,  statusPost: false
       }
     },
     [postSkills.rejected]: (state, action) => {

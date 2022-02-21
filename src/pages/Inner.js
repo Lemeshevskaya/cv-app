@@ -27,9 +27,6 @@ export default function Inner() {
   const educationsData = useSelector(state => state.education.educations.educations);
   const loadingEducation = useSelector(state => state.education.status);
   const skillsData = useSelector(state => state.skills.skills);
-  const loadingSkillsPost = useSelector(state => state.skills.statusPost)
-
-  console.log(skillsData);
 
   const educationRef = useRef();
   const aboutRef = useRef();
@@ -41,13 +38,8 @@ export default function Inner() {
 
   useEffect(() => {
     dispatch(getEducations());
-    dispatch(getSkills())
-  }, [])
-
-  useEffect(() => {
-    if (loadingSkillsPost === 'complite')
-    dispatch(getSkills())
-  }, [loadingSkillsPost])
+    dispatch(getSkills());
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
   <div className='inner'>
