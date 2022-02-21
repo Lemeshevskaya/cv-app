@@ -1,5 +1,8 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import { useSelector, useDispatch } from 'react-redux'; 
+import { postSkills } from '../features/skills/skillsSlice'
+
 import Button from './Button';
 
 import '../assets/styles/modules/_formSkill.scss'
@@ -27,6 +30,9 @@ const validate = values => {
 };
 
 export default function FormSkills() {
+
+  const dispatch = useDispatch();
+  const loadingSkills = useSelector(state => state.skills.status);
   // Pass the useFormik() hook initial form values, a validate function that will be called when
   // form values change or fields are blurred, and a submit function that will
   // be called when the form is submitted
@@ -37,7 +43,11 @@ export default function FormSkills() {
     },
     validate,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      localStorage.setItem('name', values.name);
+      localStorage.setItem('range', values.range);
+      dispatch(postSkills());
+      formik.values.name = '';
+      formik.values.range = '';
     },
   });
 
@@ -71,7 +81,6 @@ export default function FormSkills() {
           />
           {formik.errors.range ? <div className='skills__error'>{formik.errors.range}</div> : null}
         </div>
-        
         <Button text = 'Add skill' disabled={!(formik.isValid && formik.dirty)}/>
       </form>
     </div>

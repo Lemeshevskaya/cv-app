@@ -1,13 +1,14 @@
-import { createServer, Model, Response } from "miragejs"
+import { createServer, Model, Response, Server } from "miragejs"
 
 export default function makeServer() {
   createServer({
 
   models: {
-    skills: Model,
+    skills: Model ,
   },
-
+  
   routes() {
+
     this.namespace = "api"
 
     this.get("/educations", () => {
@@ -27,21 +28,18 @@ export default function makeServer() {
     }, 
     { timing: 3000 })
 
-    this.get("/skills", () => {
-      return {
-        skills: [{
-          name: 'string',
-          range: 40
-        }],
-      }
+    this.get("/skills", (schema, request) => {
+      return schema.db.skills
     })
 
     this.post("/skills", (schema, request) => {
-      let attrs = JSON.parse(request.requestBody).skills
+      let attrs = JSON.parse(request.requestBody);
+      let skills = schema.db.skills;
+      console.log(skills)
 
-
-      if (attrs.name || attrs.range) {
-        return schema.skills.create(attrs)
+      if (attrs.name && attrs.range) {
+        console.log(schema.db.skills)
+        return skills.insert(attrs)
       } else {
         return new Response(
           400,

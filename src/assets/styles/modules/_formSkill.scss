@@ -43,6 +43,7 @@
   font-size: 12px;
   color: var.$color-text-grey;
 }
+
 .skills__error {
   position: absolute;
   top: 100%;
@@ -52,4 +53,7 @@
 .skills__error-input {
   color: red;
   border: 1px solid red;
+}
+.skills__field:focus {
+  border: 1px solid var.$color-text-green;
 }

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getEducations } from '../features/education/educationSlice'
+import { getEducations } from '../features/education/educationSlice';
+import { getSkills } from '../features/skills/skillsSlice'
 
 import Panel from '../components/Panel';
 import Box from '../components/Box';
@@ -11,7 +12,8 @@ import Address from '../components/Address';
 import Feedback from '../components/Feedback';
 import GoTop from '../components/GoTop';
 import Spinner from '../components/Spinner';
-import Skills from '../components/Skills'
+import Skills from '../components/Skills';
+import FormSkills from '../components/FormSkills';
 
 import card1 from '../assets/images/card_1.png';
 import card3 from '../assets/images/card_3.png';
@@ -24,6 +26,10 @@ export default function Inner() {
   const visibility = useSelector(state => state.visibility.show);
   const educationsData = useSelector(state => state.education.educations.educations);
   const loadingEducation = useSelector(state => state.education.status);
+  const skillsData = useSelector(state => state.skills.skills);
+  const loadingSkillsPost = useSelector(state => state.skills.statusPost)
+
+  console.log(skillsData);
 
   const educationRef = useRef();
   const aboutRef = useRef();
@@ -35,7 +41,13 @@ export default function Inner() {
 
   useEffect(() => {
     dispatch(getEducations());
-  }, [dispatch])
+    dispatch(getSkills())
+  }, [])
+
+  useEffect(() => {
+    if (loadingSkillsPost === 'complite')
+    dispatch(getSkills())
+  }, [loadingSkillsPost])
 
   return (
   <div className='inner'>
@@ -65,7 +77,8 @@ export default function Inner() {
       </section>
       <section ref = {skillsRef}>
         <Box title='Skills'>
-          <Skills/>
+          <FormSkills/>
+          <Skills  data = {skillsData}/>
         </Box>
       </section>
       <section ref =  {portfolioRef}>

@@ -1,9 +1,8 @@
-import React from 'react';
-import FormSkills from './FormSkills';
+import React from 'react'
 
 import '../assets/styles/modules/_skills.scss'
 
-export default function Skills(props) {
+export default function Skills({data}) {
 
   const tabs = [
     {'tab': 'Beginner'},
@@ -14,18 +13,17 @@ export default function Skills(props) {
   
   return (
     <>
-    <FormSkills/>
+    
       <ul className='slills__list'>
-        <li className='skills__item'>
-          <span className='skills__text'>
-            React
-          </span>
-        </li>
-        <li className='skills__item'>
-          <span className='skills__text'>
-            CSS
-          </span>
-        </li>
+        {
+          data.map((skill) => (
+            <li key= {skill.id} className='skills__item' style= {{width: ` ${skill.range}%`}}>
+              <span className='skills__text'>
+                {skill.name}
+              </span>
+            </li>
+          ))
+        }
       </ul>
       <ul className='skills__tabs'>
         { tabs.map((item) => (
