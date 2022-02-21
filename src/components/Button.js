@@ -1,10 +1,10 @@
 import React from 'react';
 import '../assets/styles/modules/_button.scss';
 
-export default function Button({text, icon}) {
+export default function Button({text, icon, disabled}) {
   
   return (
-    <button className='button-main'>
+    <button className='button-main' disabled = {disabled}>
       {icon && 
         <span className='button-main__icon'>
           {icon}

@@ -20,3 +20,7 @@
 .button-main:hover {
   background-color: var.$color-text-green;
 }
+.button-main:disabled {
+  color: var.$color-text-durk;
+  background-color: var.$color-text-grey;
+}
