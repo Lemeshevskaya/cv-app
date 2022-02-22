@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
-import { useSelector, useDispatch } from 'react-redux'; 
-import { postSkills } from '../features/skills/skillsSlice'
+import { useDispatch } from 'react-redux'; 
+import { postSkills, getSkills } from '../features/skills/skillsSlice';
 
-import Button from './Button';
+import { Button } from './components';
+import { ReactComponent as PenIcon} from '../assets/images/icons/pen.svg';
 
-import '../assets/styles/modules/_formSkill.scss'
+
+import '../assets/styles/modules/_formSkill.scss';
 
 // A custom validation function. This must return an object
 
@@ -29,13 +31,10 @@ const validate = values => {
   return errors;
 };
 
-export default function FormSkills() {
+export function FormSkills() {
 
   const dispatch = useDispatch();
-  //const loadingSkills = useSelector(state => state.skills.status);
-  // Pass the useFormik() hook initial form values, a validate function that will be called when
-  // form values change or fields are blurred, and a submit function that will
-  // be called when the form is submitted
+  
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -55,6 +54,7 @@ export default function FormSkills() {
       }
       localStorage.setItem('skill', JSON.stringify(skills));
       dispatch(postSkills(skill));
+      dispatch(getSkills());
       formik.values.name = '';
       formik.values.range = '';
     },
@@ -62,6 +62,7 @@ export default function FormSkills() {
 
   return (
     <div className='skills__form'>
+      <Button text = 'Open edit' icon = { <PenIcon/> }/>
       <form className='skills__form-items' onSubmit={formik.handleSubmit}>
         <div className='skills__form-item'>
           <label className='skills__lable' htmlFor="name">Skill name</label>

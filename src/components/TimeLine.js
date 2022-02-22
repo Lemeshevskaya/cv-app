@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/styles/modules/_timeline.scss'
 
-export default function TimeLine({data}) {
+export function TimeLine({data}) {
 
   if(!data) {
     return (

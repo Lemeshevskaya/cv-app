@@ -1,8 +1,8 @@
 import React from 'react';
-import Info from './Info';
+import { Info } from './components';
 import '../assets/styles/modules/_expertise.scss'
 
-export default function Expertise({data}) {
+export function Expertise({data}) {
 
   const dataExpertise = data.map((item, i) => ({id: i, event: item}));
 

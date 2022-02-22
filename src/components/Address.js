@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/styles/modules/_address.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Address() {
+export function Address() {
 
   const dataAddress = [
     {

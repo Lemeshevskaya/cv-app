@@ -1,14 +1,12 @@
 import React from 'react';
 import '../assets/styles/modules/_panel.scss'
-import PhotoBox from './PhotoBox';
-import Navigation from './Navigation';
-import Button from './Button';
+import { PhotoBox, Navigation, Button } from './components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
 import { showAction, hideAction } from '../features/panel/panelSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
-export default function Panel(props) {
+export function Panel() {
   const dispatch = useDispatch();
   const visibility = useSelector(state => state.visibility.show);
 
@@ -19,7 +17,7 @@ export default function Panel(props) {
           <FontAwesomeIcon icon="bars" />
         </button>
         <PhotoBox name="John Doe" avatar="http://avatars0.githubusercontent.com/u/246180?v=4"/>
-        <Navigation data = {props} />
+        <Navigation />
         <Link className='panel__button' to = "/">
           <Button icon = { < FontAwesomeIcon icon = "chevron-left" /> } text = 'Go back'/>
         </Link >

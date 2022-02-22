@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Info from './Info';
+import { Info } from './components';
 import '../assets/styles/modules/_portfolio.scss'
 
-export default function Portfolio({data}) {
+export function Portfolio({data}) {
 
   const [activelink, setActivelink] = useState('all');
   const [filterWorks, setFilterWorks] = useState(data);

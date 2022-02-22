@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/styles/modules/_photoBox.scss'
 
-export default function PhotoBox({name, title, description, avatar}) {
+export function PhotoBox({name, title, description, avatar}) {
   
   return (
     <div className='photoBox'>

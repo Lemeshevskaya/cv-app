@@ -1,8 +1,8 @@
 import React from 'react';
-import Info from './Info';
+import { Info } from './components';
 import '../assets/styles/modules/_box.scss'
 
-export default function Box(props) {
+export function Box(props) {
   return (
     <div className='box'>
       <h2 className='box__title'>

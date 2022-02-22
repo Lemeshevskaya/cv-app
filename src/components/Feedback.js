@@ -1,8 +1,8 @@
 import React from 'react';
 import '../assets/styles/modules/_feedback.scss';
-import Info from './Info';
+import { Info } from './components';
 
-export default function Feedback({data}) {
+export function Feedback({data}) {
 
   const dataFeedbacks = data.map((item, i) => ({id: i, item: item}));
 

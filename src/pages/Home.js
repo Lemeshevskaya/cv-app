@@ -1,6 +1,5 @@
 import React from 'react';
-import PhotoBox from '../components/PhotoBox';
-import Button from '../components/Button';
+import { PhotoBox, Button } from '../components/components';
 import '../assets/styles/pages/_home.scss';
 import { Link } from 'react-router-dom';
 

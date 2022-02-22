@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import '../assets/styles/modules/_goTop.scss';
-import Button from './Button';
+import { Button } from './components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function GoTop() {
+export function GoTop() {
 
   const [ showGoTop, setShowGoTop ] = useState( false )
 
