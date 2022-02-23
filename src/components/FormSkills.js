@@ -4,12 +4,8 @@ import { useDispatch } from 'react-redux';
 import { postSkills, getSkills } from '../features/skills/skillsSlice';
 
 import { Button } from './components';
-import { ReactComponent as PenIcon} from '../assets/images/icons/pen.svg';
-
 
 import '../assets/styles/modules/_formSkill.scss';
-
-// A custom validation function. This must return an object
 
 const validate = values => {
   const errors = {};
@@ -31,7 +27,7 @@ const validate = values => {
   return errors;
 };
 
-export function FormSkills() {
+export function FormSkills({ visible }) {
 
   const dispatch = useDispatch();
   
@@ -61,8 +57,7 @@ export function FormSkills() {
   });
 
   return (
-    <div className='skills__form'>
-      <Button text = 'Open edit' icon = { <PenIcon/> }/>
+    <div className= { visible ?  `skills__form` :  'skills__form_hidden' }>
       <form className='skills__form-items' onSubmit={formik.handleSubmit}>
         <div className='skills__form-item'>
           <label className='skills__lable' htmlFor="name">Skill name</label>

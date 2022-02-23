@@ -1,22 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getEducations } from '../features/education/educationSlice';
 import { getSkills } from '../features/skills/skillsSlice'
 
-import { Panel, Box, TimeLine, Expertise, Portfolio, Address, Feedback, GoTop, Spinner, Skills, FormSkills  } from '../components/components';
+import { Panel, Box, TimeLine, Expertise, Portfolio, Address, Feedback, GoTop, Spinner, Skills, FormSkills, Button  } from '../components/components';
 
 import { feedback, portfolio, experience, about, navigationLink } from '../data/data';
+import { ReactComponent as PenIcon} from '../assets/images/icons/pen.svg';
 
 import '../assets/styles/pages/_inner.scss';
 
 export default function Inner() {
 
-  console.log(feedback);
   const dispatch = useDispatch();
   const visibility = useSelector(state => state.visibility.show);
   const educationsData = useSelector(state => state.education.educations.educations);
   const loadingEducation = useSelector(state => state.education.status);
   const skillsData = useSelector(state => state.skills.skills);
+
+  const [skillsVisible, setSkillsVisible] = useState(false);
 
   useEffect(() => {
     dispatch(getEducations());
@@ -44,7 +46,10 @@ export default function Inner() {
       </section>
       <section id = {navigationLink[3].link}>
         <Box title='Skills'>
-          <FormSkills/>
+          <div className='skills__button' onClick={() => setSkillsVisible(!skillsVisible)}>
+            <Button text = 'Open edit' icon = { <PenIcon/> }/>  
+          </div>
+          <FormSkills visible = {skillsVisible}/>
           <Skills  data = {skillsData}/>
         </Box>
       </section>

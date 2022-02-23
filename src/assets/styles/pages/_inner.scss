@@ -11,6 +11,12 @@
   width: 100%;
   margin: 0;
 }
+.skills__button {
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
 @media screen and (max-width: 600px) {
   .inner__main_non-active {
     width: calc(100% - 3.4rem);
