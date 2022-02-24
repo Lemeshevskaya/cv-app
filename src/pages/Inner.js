@@ -5,7 +5,7 @@ import { getSkills } from '../features/skills/skillsSlice'
 
 import { Panel, Box, TimeLine, Expertise, Portfolio, Address, Feedback, GoTop, Spinner, Skills, FormSkills, Button  } from '../components/components';
 
-import { feedback, portfolio, experience, about, navigationLink } from '../data/data';
+import { feedback, portfolio, experience, about, navigationLink, address } from '../data/data';
 import { ReactComponent as PenIcon} from '../assets/images/icons/pen.svg';
 
 import '../assets/styles/pages/_inner.scss';
@@ -60,7 +60,7 @@ export default function Inner() {
       </section>
       <section id = {navigationLink[5].link}>
         <Box title = 'Contacts'>
-          <Address/>
+          <Address data = {address}/>
         </Box>
       </section>
       <section id = {navigationLink[6].link}>

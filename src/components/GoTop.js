@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import '../assets/styles/modules/_goTop.scss';
-import { Button } from './components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { Button } from './components';
+
+import '../assets/styles/modules/_goTop.scss';
 
 export function GoTop() {
 

@@ -18,7 +18,6 @@ export const postSkills = createAsyncThunk(
         body: JSON.stringify({name: skill.name, range: skill.range}),
       })
       const data = await response.json();
-      console.log(data)
       return data
     } catch (err) {
       console.log(err);
@@ -42,7 +41,6 @@ export const getSkills =
               }
             })
             const data = await response.json();
-            console.log(data);
             return data
           }
         } catch (err) {

@@ -4,7 +4,7 @@
 	min-height: 30vh;
 	max-height: 80vh;
 	overflow: auto;
-	animation: show 1s 1 normal ease-in-out;
+	animation: show 1s 0.5 normal ease-in-out;
 }
 .timeline__list {
 	position: relative;
@@ -77,8 +77,9 @@
 			transform: scale(0, 0);
 	}
 	50% {
+			
+			transform: scale(1, 1);
 			opacity: 1;
-			transform: scale(1.1, 1.1);
 	}
 	to {
 			transform: scale(1, 1);

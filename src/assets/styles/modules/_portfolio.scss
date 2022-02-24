@@ -42,7 +42,7 @@
 	margin: 0 20px 20px 0;
 	position: relative;
 	overflow: hidden;
-	animation: show 0.5s ease;
+	animation: showPortfolio 0.5s ease;
 }
 .portfolio__info{
 	height: 100%;
@@ -74,7 +74,7 @@
 	font-size: var.$size-text;
 	color: var.$color-text-green;
 }
-@keyframes show {
+@keyframes showPortfolio {
 	from {
 		transform: scale(0);
 		opacity: 0;

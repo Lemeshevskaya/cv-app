@@ -1,10 +1,12 @@
 import React from 'react';
-import '../assets/styles/modules/_panel.scss'
-import { PhotoBox, Navigation, Button } from './components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
-import { showAction, hideAction } from '../features/panel/panelSlice';
 import { useSelector, useDispatch } from 'react-redux';
+
+import { PhotoBox, Navigation, Button } from './components';
+import { showAction, hideAction } from '../features/panel/panelSlice';
+
+import '../assets/styles/modules/_panel.scss'
 
 export function Panel() {
   const dispatch = useDispatch();

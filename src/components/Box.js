@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Info } from './components';
+
 import '../assets/styles/modules/_box.scss'
 
 export function Box(props) {

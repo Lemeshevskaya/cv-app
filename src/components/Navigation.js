@@ -1,6 +1,8 @@
 import React from 'react';
-import '../assets/styles/modules/_navigation.scss'
+
 import { navigationLink } from '../data/dataNavigation';
+
+import '../assets/styles/modules/_navigation.scss'
 
 export function Navigation() {
 

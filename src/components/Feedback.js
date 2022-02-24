@@ -1,6 +1,9 @@
 import React from 'react';
-import '../assets/styles/modules/_feedback.scss';
+
 import { Info } from './components';
+
+import '../assets/styles/modules/_feedback.scss';
+
 
 export function Feedback({data}) {
 

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '../assets/styles/modules/_button.scss';
 
 export function Button({text, icon, disabled}) {

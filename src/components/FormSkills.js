@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux'; 
 import { postSkills, getSkills } from '../features/skills/skillsSlice';
@@ -86,7 +86,7 @@ export function FormSkills({ visible }) {
           />
           {formik.errors.range ? <div className='skills__error'>{formik.errors.range}</div> : null}
         </div>
-        <Button text = 'Add skill' disabled={!(formik.isValid && formik.dirty)}/>
+        <Button text = 'Add skill' disabled={!formik.isValid || formik.values.name.length === 0 || formik.values.range.length === 0}/>
       </form>
     </div>
   );

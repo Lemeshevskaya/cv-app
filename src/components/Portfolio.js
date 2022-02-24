@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
 import { Info } from './components';
+
 import '../assets/styles/modules/_portfolio.scss'
 
 export function Portfolio({data}) {
