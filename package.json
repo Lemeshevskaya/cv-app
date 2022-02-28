@@ -11,7 +11,6 @@
     "@reduxjs/toolkit": "^1.7.2",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
     "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -35,6 +34,11 @@
       "react-app/jest"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test:coverage"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -48,13 +52,22 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/user-event": "^13.5.0",
     "miragejs": "^0.1.43",
     "react-router-dom": "^6.2.1"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
-      "!/node_modules/"
+      "!/node_modules/",
+      "!src/reportWebVitals.js",
+      "!src/store.js",
+      "!src/index.js",
+      "!src/App.js",
+      "!src/pages/*.js",
+      "!src/components/components.js",
+      "!src/data/*.js",
+      "!src/services/server.js"
     ],
     "coverageThreshold": {
       "global": {

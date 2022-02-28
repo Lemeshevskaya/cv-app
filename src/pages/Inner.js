@@ -28,7 +28,7 @@ export default function Inner() {
   return (
   <div className='inner'>
     <Panel/>
-    <main className={visibility ? 'inner__main inner__main_non-active' : 'inner__main inner__main_active'}>
+    <main className={visibility ? 'inner__main inner__main_non-active' : 'inner__main inner__main_active'} id = 'main'>
       <section id = {navigationLink[0].link}>
         <Box title='About me' content= { about } />
       </section>

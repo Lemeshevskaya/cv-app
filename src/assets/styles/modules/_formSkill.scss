@@ -39,7 +39,6 @@
   font-size: 12px;
   color: var.$color-text-grey;
 }
-
 .skills__error {
   position: absolute;
   top: 100%;
@@ -82,8 +81,8 @@
   }
 	to {
     opacity: 0;
-			transform: scaleY(0);
-      transform-origin: top;
-      height: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    height: 0;
 	}
 }

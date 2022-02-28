@@ -35,7 +35,7 @@ export function Portfolio({data}) {
           <li key = {tab.link}
           onClick = {() => {setActivelink(tab.link)}}
           className = {activelink === tab.link ? 'portfolio__link portfolio__link_active' : 'portfolio__link'}>
-            <span>
+            <span data-testid = {tab.link}>
               {tab.link}
             </span>
           </li>

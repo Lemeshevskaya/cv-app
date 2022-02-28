@@ -27,7 +27,7 @@ const validate = values => {
   return errors;
 };
 
-export function FormSkills({ visible }) {
+export function FormSkills({ visible, onSubmit }) {
 
   const dispatch = useDispatch();
   
@@ -51,6 +51,7 @@ export function FormSkills({ visible }) {
       localStorage.setItem('skill', JSON.stringify(skills));
       dispatch(postSkills(skill));
       dispatch(getSkills());
+      onSubmit(skill);
       formik.values.name = '';
       formik.values.range = '';
     },
