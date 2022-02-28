@@ -74,154 +74,151 @@ test('FormSkills - validation empty name value', async () => {
       </Provider>
     </Router>
     );
+  const inputRange = screen.getByPlaceholderText('Enter skill range');
+  const inputName = screen.getByPlaceholderText('Enter skill name');
+  userEvent.type(inputName, '');
+  userEvent.type(inputRange, '10');
+
+  await screen.findByText('Skill name is a required field');
+  expect(screen.getByText('Skill name is a required field')).toBeInTheDocument()
+})
+
+test('FormSkills - validation range value empty', async () => {
+  render(
+    <Router>
+      <Provider store= {store}>
+        <FormSkills/>
+      </Provider>
+    </Router>
+    );
     const inputRange = screen.getByPlaceholderText('Enter skill range');
     const inputName = screen.getByPlaceholderText('Enter skill name');
-    userEvent.type(inputName, '');
-    userEvent.type(inputRange, '10');
+    userEvent.type(inputName, 'css');
+    userEvent.type(inputRange, '');
 
-    await screen.findByText('Skill name is a required field');
-    expect(screen.getByText('Skill name is a required field')).toBeInTheDocument()
+    await screen.findByText('Skill range is a required field');
+    expect(screen.getByText('Skill range is a required field')).toBeInTheDocument()    
   })
 
-  test('FormSkills - validation range value empty', async () => {
-    render(
-      <Router>
-        <Provider store= {store}>
-          <FormSkills/>
-        </Provider>
-      </Router>
-      );
-      const inputRange = screen.getByPlaceholderText('Enter skill range');
-      const inputName = screen.getByPlaceholderText('Enter skill name');
-      userEvent.type(inputName, 'css');
-      userEvent.type(inputRange, '');
-  
-      await screen.findByText('Skill range is a required field');
-      expect(screen.getByText('Skill range is a required field')).toBeInTheDocument()    
-    })
+test('FormSkills - validation range value', async () => {
+  render(
+    <Router>
+      <Provider store= {store}>
+        <FormSkills/>
+      </Provider>
+    </Router>
+    );
+    const inputRange = screen.getByPlaceholderText('Enter skill range');
+    const inputName = screen.getByPlaceholderText('Enter skill name');
+    userEvent.type(inputName, 'css');
+    userEvent.type(inputRange, 'v');
 
-    test('FormSkills - validation range value', async () => {
-      render(
-        <Router>
-          <Provider store= {store}>
-            <FormSkills/>
-          </Provider>
-        </Router>
-        );
-        const inputRange = screen.getByPlaceholderText('Enter skill range');
-        const inputName = screen.getByPlaceholderText('Enter skill name');
-        userEvent.type(inputName, 'css');
-        userEvent.type(inputRange, 'v');
+    await screen.findByText('Skill range must be a `number` type');
+    expect(screen.getByText('Skill range must be a `number` type')).toBeInTheDocument()    
+  })
+
+test('FormSkills - submit', async () => {
+  let submit = jest.fn();
+
+  render(
+    <Router>
+      <Provider store= {store}>
+        <FormSkills onSubmit={submit}/>
+      </Provider>
+    </Router>
+    );
+    const inputRange = screen.getByPlaceholderText('Enter skill range');
+    const inputName = screen.getByPlaceholderText('Enter skill name');
+    userEvent.type(inputName, 'css');
+    userEvent.type(inputRange, '50');
+
+    userEvent.click(screen.getByText('Add skill'));
     
-        await screen.findByText('Skill range must be a `number` type');
-        expect(screen.getByText('Skill range must be a `number` type')).toBeInTheDocument()    
-      })
+    await waitFor(() => 
+      expect(submit).toHaveBeenCalledTimes(1)
+    )
+  })
 
-      test('FormSkills - submit', async () => {
-        let submit = jest.fn();
-    
-        render(
-          <Router>
-            <Provider store= {store}>
-              <FormSkills onSubmit={submit}/>
-            </Provider>
-          </Router>
-          );
-          const inputRange = screen.getByPlaceholderText('Enter skill range');
-          const inputName = screen.getByPlaceholderText('Enter skill name');
-          userEvent.type(inputName, 'css');
-          userEvent.type(inputRange, '50');
+test('FormSkills - submit value', async () => {
+  let submit = jest.fn();
 
-          userEvent.click(screen.getByText('Add skill'));
-          
-          await waitFor(() => 
-            expect(submit).toHaveBeenCalledTimes(1)
-          )
-        })
+  render(
+    <Router>
+      <Provider store= {store}>
+        <FormSkills onSubmit={submit}/>
+      </Provider>
+    </Router>
+    );
+  const inputRange = screen.getByPlaceholderText('Enter skill range');
+  const inputName = screen.getByPlaceholderText('Enter skill name');
+  userEvent.type(inputName, 'css');
+  userEvent.type(inputRange, '50');
 
-        test('FormSkills - submit value', async () => {
-          let submit = jest.fn();
-      
-          render(
-            <Router>
-              <Provider store= {store}>
-                <FormSkills onSubmit={submit}/>
-              </Provider>
-            </Router>
-            );
-            const inputRange = screen.getByPlaceholderText('Enter skill range');
-            const inputName = screen.getByPlaceholderText('Enter skill name');
-            userEvent.type(inputName, 'css');
-            userEvent.type(inputRange, '50');
+  userEvent.click(screen.getByText('Add skill'));
   
-            userEvent.click(screen.getByText('Add skill'));
-            
-            await waitFor(() => 
-              expect(submit).toHaveBeenCalledWith({
-                name: 'css',
-                range: '50'
-              }),
-            )
-          })
+  await waitFor(() => 
+    expect(submit).toHaveBeenCalledWith({
+      name: 'css',
+      range: '50'
+    }),
+  )
+})
 
-          //Skill
+//Skill
 
-          test('Skill - render', () => {
-            const data = [
-              {
-                name: 'html',
-                range: '90'
-              }
-            ];
+test('Skill - render', () => {
+  const data = [
+    {
+      name: 'html',
+      range: '90'
+    }
+  ];
 
-            render(
-              <Skills data={data}/>
-            );
-          
-            expect(screen.getByText('html')).toBeInTheDocument();
-          })
+  render(
+    <Skills data={data}/>
+  );
 
-          //Portfolio
+  expect(screen.getByText('html')).toBeInTheDocument();
+})
 
-          test('Portfolio - render component', () => {
-            const data = [
-              {
-                id: 1,
-                type: 'ui',
-                img: 'image',
-                title: 'ui example',
-                text: 'Donec pede justo, fringilla vel, aliquet nec'
-              },
-              {
-                id: 2,
-                type: 'code',
-                img: 'image',
-                title: 'code example',
-                text: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget'
-              },
-            ]
+//Portfolio
 
-            render(
-              <Portfolio data={data}/>
-            );
-            userEvent.click(screen.getByTestId('ui'));
-          
-            expect(screen.getAllByRole('heading', {level:3})).toHaveLength(1);
-          })
+test('Portfolio - render component', () => {
+  const data = [
+    {
+      id: 1,
+      type: 'ui',
+      img: 'image',
+      title: 'ui example',
+      text: 'Donec pede justo, fringilla vel, aliquet nec'
+    },
+    {
+      id: 2,
+      type: 'code',
+      img: 'image',
+      title: 'code example',
+      text: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget'
+    },
+  ]
 
-          //Panel
+  render(
+    <Portfolio data={data}/>
+  );
+  userEvent.click(screen.getByTestId('ui'));
 
-          test('Panel - render component', () => {
-            render(
-              <Router>
-              <Provider store= {store}>
-                <Panel/>
-              </Provider>
-            </Router>
-            );
-          
-            expect(screen.getAllByRole('button')).toHaveLength(9);
-          })
+  expect(screen.getAllByRole('heading', {level:3})).toHaveLength(1);
+})
 
+//Panel
 
-          
+test('Panel - render component', () => {
+  render(
+    <Router>
+    <Provider store= {store}>
+      <Panel/>
+    </Provider>
+  </Router>
+  );
+
+  expect(screen.getAllByRole('button')).toHaveLength(9);
+})
