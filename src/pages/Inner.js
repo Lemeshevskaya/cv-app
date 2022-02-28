@@ -29,22 +29,22 @@ export default function Inner() {
   <div className='inner'>
     <Panel/>
     <main className={visibility ? 'inner__main inner__main_non-active' : 'inner__main inner__main_active'} id = 'main'>
-      <section id = {navigationLink[0].link}>
+      <section id = {navigationLink.about.link}>
         <Box title='About me' content= { about } />
       </section>
-      <section id = {navigationLink[1].link}>
+      <section id = {navigationLink.education.link}>
         <Box title='Education'>
           {loadingEducation 
           ? <Spinner/>
           : <TimeLine data = { educationsData } />}
         </Box>
       </section>
-      <section id = {navigationLink[2].link}>
+      <section id = {navigationLink.experience.link}>
         <Box title='Experience'>
           <Expertise data={experience} />
         </Box>
       </section>
-      <section id = {navigationLink[3].link}>
+      <section id = {navigationLink.skills.link}>
         <Box title='Skills'>
           <div className='skills__button' onClick={() => setSkillsVisible(!skillsVisible)}>
             <Button text = 'Open edit' icon = { <PenIcon/> }/>  
@@ -53,17 +53,17 @@ export default function Inner() {
           <Skills  data = {skillsData}/>
         </Box>
       </section>
-      <section id = {navigationLink[4].link}>
+      <section id = {navigationLink.portfolio.link}>
         <Box title='Portfolio'>
           <Portfolio data = {portfolio} />
         </Box>
       </section>
-      <section id = {navigationLink[5].link}>
+      <section id = {navigationLink.contacts.link}>
         <Box title = 'Contacts'>
           <Address data = {address}/>
         </Box>
       </section>
-      <section id = {navigationLink[6].link}>
+      <section id = {navigationLink.feedback.link}>
           <Box title = 'Feedback'>
             <Feedback data={feedback} />
           </Box>
