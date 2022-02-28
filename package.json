@@ -26,18 +26,14 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:coverage": "npm test -- --coverage",
-    "coverage": "react-scripts test --coverage --coverageDirectory='coverage' --watchAll=false"
+    "coverage": "react-scripts test --coverage --coverageDirectory='coverage' --watchAll=false",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run test:coverage"
-    }
   },
   "browserslist": {
     "production": [
@@ -53,6 +49,7 @@
   },
   "devDependencies": {
     "@testing-library/user-event": "^13.5.0",
+    "husky": "^7.0.0",
     "miragejs": "^0.1.43",
     "react-router-dom": "^6.2.1"
   },
