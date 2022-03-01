@@ -79,9 +79,6 @@
         "lines": 40,
         "statements": 40
       }
-    },
-    "eslintConfig": {
-      "extends": "airbnb-base"
     }
   }
 }
