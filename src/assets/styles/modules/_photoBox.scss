@@ -1,4 +1,4 @@
-@use '../var';
+@use "../var";
 
 .photoBox {
   display: flex;
@@ -8,17 +8,17 @@
   margin-bottom: 10px;
 }
 .photoBox__img-box {
-  width:163px;
-	height:163px;
-	overflow:hidden;
-	position:relative;
-	border:1px solid #fff;
-	border-radius:50%;
-	margin:0 auto;
+  width: 163px;
+  height: 163px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  margin: 0 auto;
 }
-.photoBox__img{
-	height:100%;
-	position:absolute;
+.photoBox__img {
+  height: 100%;
+  position: absolute;
   top: 0;
   right: 0;
 }
@@ -43,8 +43,8 @@
   flex-shrink: 3;
 }
 .photoBox__img-box_menu {
-  width:100px;
-	height:100px;
+  width: 100px;
+  height: 100px;
   transition: all 0.5s ease;
 }
 .photoBox__main_menu {

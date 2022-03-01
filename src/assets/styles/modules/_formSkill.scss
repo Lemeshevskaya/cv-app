@@ -1,4 +1,4 @@
-@use '../var';
+@use "../var";
 
 .skills__form {
   padding: 20px 15px;
@@ -58,31 +58,31 @@
 }
 
 @keyframes showForm {
-	from {
-			opacity: 0;
-			transform: scaleY(0);
-      transform-origin: top;
-      height: 0;
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    height: 0;
   }
-	to {
-    opacity: 1;
-			transform: scaleY(1);
-      transform-origin: top;
-      height: 100%;
-	}
-}
-
-@keyframes hiddenForm {
-	from {
+  to {
     opacity: 1;
     transform: scaleY(1);
     transform-origin: top;
     height: 100%;
   }
-	to {
+}
+
+@keyframes hiddenForm {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+    height: 100%;
+  }
+  to {
     opacity: 0;
     transform: scaleY(0);
     transform-origin: top;
     height: 0;
-	}
+  }
 }

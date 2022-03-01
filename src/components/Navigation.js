@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import { navigationLink } from '../data/dataNavigation';
+import { navigationLink } from "../data/dataNavigation";
 
-import '../assets/styles/modules/_navigation.scss'
+import "../assets/styles/modules/_navigation.scss";
 
 export function Navigation() {
 
@@ -16,15 +16,15 @@ export function Navigation() {
     <nav className="navigation">
       <ul className="navigation__list">
         {navigationData.map((item) => (
-          <li key = {item.id} className= "navigation__item">
-          <button className= 'navigation__link'
-            onClick = {() => handleClick(item.link)}>
-            {item.icon}
-            <span className = 'navigation__text'>
-              {item.name}
-            </span>
-          </button>
-        </li>
+          <li key={item.id} className="navigation__item">
+            <button
+              className="navigation__link"
+              onClick={() => handleClick(item.link)}
+            >
+              {item.icon}
+              <span className="navigation__text">{item.name}</span>
+            </button>
+          </li>
         ))}
       </ul>
     </nav>

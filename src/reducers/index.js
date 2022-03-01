@@ -1,7 +1,8 @@
-import { combineReducers } from 'redux';
-import  visibilityReducer  from '../features/panel/panelSlice';
-import educationReducer from '../features/education/educationSlice';
-import skillsReducer from '../features/skills/skillsSlice';
+import { combineReducers } from "redux";
+
+import visibilityReducer from "../features/panel/panelSlice";
+import educationReducer from "../features/education/educationSlice";
+import skillsReducer from "../features/skills/skillsSlice";
 
 const reducers = {
   visibility: visibilityReducer,

@@ -1,4 +1,4 @@
-@use '../var';
+@use "../var";
 
 .spinner {
   color: var.$color-text-green;
@@ -16,4 +16,3 @@
     transform: rotate(359deg);
   }
 }
-

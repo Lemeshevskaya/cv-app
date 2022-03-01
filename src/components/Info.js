@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import '../assets/styles/modules/_info.scss'
+import "../assets/styles/modules/_info.scss";
 
-export function Info({data}) {
-  return (
-    <p className='info'>
-      {data}
-    </p>
-  )
+export function Info({ data }) {
+  return <p className="info">{data}</p>;
 }

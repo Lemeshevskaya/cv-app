@@ -1,9 +1,9 @@
-@use '../var';
+@use "../var";
 
 .info {
   text-align: left;
   color: var.$color-text-durk;
   font-size: var.$size-text;
   font-weight: var.$weight-regular;
-  line-height: 150%
+  line-height: 150%;
 }

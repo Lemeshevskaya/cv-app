@@ -1,87 +1,87 @@
-@use '../var';
+@use "../var";
 
 .timeline {
-	min-height: 30vh;
-	max-height: 80vh;
-	overflow: auto;
-	animation: show 1s 0.5 normal ease-in-out;
+  min-height: 30vh;
+  max-height: 80vh;
+  overflow: auto;
+  animation: show 1s 0.5 normal ease-in-out;
 }
 .timeline__list {
-	position: relative;
-	padding: 15px;
+  position: relative;
+  padding: 15px;
 }
 .timeline__list:before {
-	background:var.$color-text-green;
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:10px;
-	width:4px;
-	content:"";
-	margin-left:21px;
+  background: var.$color-text-green;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  width: 4px;
+  content: "";
+  margin-left: 21px;
 }
 .timeline__item {
-	display:flex;
-	align-items:flex-start;
-	margin-bottom:10px;
-	width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
 }
 .timeline__list li:last-child {
-	margin:0;
+  margin: 0;
 }
 .timeline__date {
-	padding:15px;
-	background:#fff;
-	position:relative;
-	left:-15px;
+  padding: 15px;
+  background: #fff;
+  position: relative;
+  left: -15px;
 }
 .timeline__event {
-	position:relative;
-	background: #eee;
+  position: relative;
+  background: #eee;
   padding: 15px;
-	width: inherit;
+  width: inherit;
 }
-.timeline__event:after{
-	content:"";
-	position:absolute;
-	top:15px;
-	left:-10px;
-	width:0;
-	height:0;
-	border-top:10px solid transparent;
-	border-bottom:10px solid transparent;
-	border-right:10px solid #eee
+.timeline__event:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #eee;
 }
-.timeline__title, .timeline__date {
+.timeline__title,
+.timeline__date {
   font-size: var.$size-title;
   font-weight: var.$weight-semi-bold;
   line-height: 120%;
 }
 .timeline__title {
-	padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 .timeline__text {
-	font-size: var.$size-text;
-	font-weight: var.$weight-regular;
-	line-height: 150%;
-	text-align: justify;
+  font-size: var.$size-text;
+  font-weight: var.$weight-regular;
+  line-height: 150%;
+  text-align: justify;
 }
-.timeLine__error{
-	text-align: center;
-	color: red;
+.timeLine__error {
+  text-align: center;
+  color: red;
 }
 
 @keyframes show {
-	from {
-			opacity: 0;
-			transform: scale(0, 0);
-	}
-	50% {
-			
-			transform: scale(1, 1);
-			opacity: 1;
-	}
-	to {
-			transform: scale(1, 1);
-	}
+  from {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  50% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1, 1);
+  }
 }

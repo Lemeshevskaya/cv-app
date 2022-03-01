@@ -1,49 +1,53 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   educations: [],
-  status: 'init',
-}
+  status: "init",
+};
 
 export const getEducations = createAsyncThunk(
-  'education/getEducations',
+  "education/getEducations",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('api/educations', {
-        method: 'GET',
+      const response = await fetch("api/educations", {
+        method: "GET",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-      })
+      });
       const data = await response.json();
-      return data
+      return data;
     } catch (err) {
-      return rejectWithValue(err.response.data)
+      return rejectWithValue(err.response.data);
     }
   }
-)
+);
 
 const educationThunk = createSlice({
-  name: 'educations',
+  name: "educations",
   initialState,
   reducers: {},
   extraReducers: {
     [getEducations.pending]: (state) => {
       return {
-        ...state,  status: 'loading'
-      }
+        ...state,
+        status: "loading",
+      };
     },
-    [getEducations.fulfilled]: (state, {payload}) => {
+    [getEducations.fulfilled]: (state, { payload }) => {
       return {
-        ...state,  status: false, educations: payload
-      }
+        ...state,
+        status: false,
+        educations: payload,
+      };
     },
     [getEducations.rejected]: (state, action) => {
       return {
-        ...state,  status: false
-      }
+        ...state,
+        status: false,
+      };
     },
   },
-})
+});
 
 export default educationThunk.reducer;

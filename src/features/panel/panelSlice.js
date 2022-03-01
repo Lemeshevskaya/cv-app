@@ -1,23 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {show: true};
+const initialState = { show: true };
 
 const visibilitySlice = createSlice({
-  name: 'visibilityAction',
+  name: "visibilityAction",
   initialState,
   reducers: {
     showAction(state) {
       return {
-        ...state, show: true
-      }
+        ...state,
+        show: true,
+      };
     },
     hideAction(state) {
       return {
-        ...state, show: false
-      }
-    }
-  }
-})
+        ...state,
+        show: false,
+      };
+    },
+  },
+});
 
-export const { showAction, hideAction } = visibilitySlice.actions
-export default visibilitySlice.reducer
+export const { showAction, hideAction } = visibilitySlice.actions;
+export default visibilitySlice.reducer;
