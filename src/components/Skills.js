@@ -3,6 +3,7 @@ import React from "react";
 import "../assets/styles/modules/_skills.scss";
 
 export function Skills({ data }) {
+  console.log(data);
   
   const tabs = [
     { tab: "Beginner" },
