@@ -58,7 +58,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.0",
     "miragejs": "^0.1.43",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.2.2"
   },
   "jest": {
     "collectCoverageFrom": [
