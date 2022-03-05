@@ -45,12 +45,13 @@
   color: red;
   font-size: 12px;
 }
-.skills__error-input {
-  color: red;
-  border: 1px solid red;
-}
 .skills__field:focus {
   border: 1px solid var.$color-text-green;
+}
+.skills__error-input,
+.skills__error-input:focus {
+  color: red;
+  border: 1px solid red;
 }
 .skills__form_hidden {
   display: none;

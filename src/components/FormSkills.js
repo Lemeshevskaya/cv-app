@@ -51,7 +51,9 @@ export function FormSkills({ visible, onSubmit }) {
       localStorage.setItem("skill", JSON.stringify(skills));
       dispatch(postSkills(skill));
       dispatch(getSkills());
-      onSubmit(skill);
+      if (onSubmit) {
+        onSubmit(skill)
+      };
       formik.values.name = "";
       formik.values.range = "";
     },
