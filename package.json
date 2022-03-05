@@ -27,7 +27,8 @@
     "eject": "react-scripts eject",
     "test:coverage": "npm test -- --coverage",
     "coverage": "react-scripts test --coverage --coverageDirectory='coverage' --watchAll=false",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
   },
   "eslintConfig": {
     "extends": [
