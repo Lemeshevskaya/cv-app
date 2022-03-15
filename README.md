@@ -1,6 +1,7 @@
 # CV-app
 
-A personal, professional CV web application that allows users to have a working prototype to share with an audience,.
+A personal, professional CV web application that allows users to have a working prototype to share with an audience.
+![demo cv-app](demo cv-app.gif)
 
 ## Getting Started
 
