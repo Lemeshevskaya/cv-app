@@ -1,11 +1,13 @@
 # CV-app
 
 A personal, professional CV web application that allows users to have a working prototype to share with an audience.
+
 ![demo cv-app](demo cv-app.gif)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine 
+for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ## Installing
 
@@ -28,7 +30,8 @@ You may also see any lint errors in the console.
 The coverage report and the corresponding HTML code is generated in coverage/lcov-report/index.html \
 
 ## Deployment
-There are many hosting and deployment services available online that can run your React app from a remote server, like Firebase, Netlify, Heroku, GitLab Pages. 
+There are many hosting and deployment services available online that can run your React app from a remote server,
+ as Firebase, Netlify, Heroku, GitLab Pages. 
 
 ### `npm run build`
 
